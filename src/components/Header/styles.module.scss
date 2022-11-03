@@ -1,0 +1,49 @@
+.headerContainer {
+  height: 5rem;
+  border-bottom: 1px solid var(--yellow-900);
+  background: var(--black);
+}
+
+.headerContent {
+  max-width: 1440px;
+  height: 5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+
+    font-size: 2rem;
+    font-weight: 700;
+    
+    span {
+      padding: 0 0.1rem;
+      color: var(--yellow-900);
+    }
+  }
+
+  nav{
+    font-size: 1.2rem;
+
+    ul {
+      list-style: none;
+  
+      li {
+        display: inline;
+        
+        & + li {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
+  .socialIcons {
+    font-size: 1.5rem;
+  }
+
+
+}
