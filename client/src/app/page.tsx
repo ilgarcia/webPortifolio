@@ -31,27 +31,32 @@ export default function Page() {
       <section id="about" className={styles.sectionAbout}>
         <h2 className={styles.numberedHeaders}>About Me</h2>
         <div className={styles.aboutMe}>
-          <div className={styles.profileText}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              quasi harum dolorum iste nihil quidem facilis, eaque officiis
-              delectus. Amet neque architecto quaerat distinctio odit veritatis
-              aliquid eum cum accusantium!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              facilis beatae maiores saepe laboriosam, incidunt, nostrum eaque
-              praesentium ex minus deleniti labore qui vero voluptatem in? elit.
-              Ipsum voluptate porro eprehenderit doloribus impedit, dolore
-              laudantium laborum asperiores sint, incidunt temporibus nulla
-              commodi! Corporis cum a dignissimos quae vel.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-              beatae nulla earum, quisquam accusantium molestiae autem tenetur
-              velit ipsum qui veritatis dicta nam eveniet quo sunt ratione illo,
-              praesentium optio.
-            </p>
+          <div>
+            <div className={styles.profileText}>
+              <p>
+                Hello! My name is Igor, my interest in web development started
+                back in 2018 when I decided to start my own company. I've always
+                been someone who has both a creative and a logical side and i
+                realized it would be the perfect fit if i could use my creative
+                side to design and my logical side to code.
+              </p>
+              <p>
+                Well-organized person, problem solver, independent employee with
+                high attention to detail. I want to keep learning, continue
+                challenging myself, and do interesting things that matter.
+              </p>
+              <p>
+                Here are a few technologies I've been working with recently:
+              </p>
+            </div>
+            <ul className={styles.skillList}>
+              <li>JavaScript (ES6+)</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Node.js</li>
+              <li>TypeScript</li>
+              <li>WordPress</li>
+            </ul>
           </div>
           <div className={styles.profilePic}>
             <div className={styles.wrapper}>
@@ -120,10 +125,9 @@ export default function Page() {
             </div>
             <div className={styles.elementContainer}>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                esse iure voluptatibus nemo, soluta accusamus, ducimus veniam
-                odit veritatis laboriosam distinctio excepturi atque labore
-                quaerat totam in!
+                Passionate about UI/UX. working with a few projects and
+                development experience in HTML, CSS, JS, React and NextJS
+                frameworks.
               </p>
             </div>
           </div>

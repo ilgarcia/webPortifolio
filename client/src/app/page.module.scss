@@ -62,6 +62,27 @@
         }
       }
 
+      .skillList {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 0px 10px;
+        padding: 0px;
+        margin: 20px 0px 0px;
+
+        li {
+          position: relative;
+          margin-bottom: 10px;
+          padding-left: 20px;
+        }
+
+        li::before {
+          content: "▹";
+          position: absolute;
+          left: 0;
+          color: var(--yellow-900);
+        }
+      }
+
       .profilePic {
         max-width: 300px;
 
@@ -200,10 +221,10 @@
           &::after {
             content: "";
             width: 0;
-            height: 130px;
+            height: 90px;
             position: absolute;
             border: 0.1px solid var(--gray-300);
-            bottom: 140px;
+            bottom: 100px;
             left: 65px;
           }
         }

@@ -16,7 +16,7 @@ export function Tabs() {
             setOpenTab(1);
           }}
         >
-          Trabalho 1
+          Conta-Mais
         </button>
         <button
           className={`${styles.tabs} ${openTab === 2 && styles.active}`}
@@ -25,7 +25,7 @@ export function Tabs() {
             setOpenTab(2);
           }}
         >
-          Trabalho 2
+          Itaú Unibanco
         </button>
         <button
           className={`${styles.tabs} ${openTab === 3 && styles.active}`}
@@ -34,66 +34,57 @@ export function Tabs() {
             setOpenTab(3);
           }}
         >
-          Trabalho 3
+          Itaú Unibanco
         </button>
       </div>
       <div className={styles.experienceInfo}>
         <div className={`${styles.info} ${openTab !== 1 && styles.hidden}`}>
-          <h3>Trabalho 1</h3>
-          <p>Month Year - Month Year</p>
+          <h3>Conta-Mais</h3>
+          <p>Managing PartnerAug - 2018 - Jan 2022</p>
           <div>
             <ul>
               <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                eligendi autem quaerat reprehenderit! Non est quidem
-                consequatur, totam, expedita voluptatum asperiores repudiandae
-                esse voluptas reiciendis nobis aliquid provident tenetur sunt.
+                Ensure the operation of all internal processes, website
+                development as well as hire the necessary technological tools.
               </li>
               <li>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Impedit, nihil. Atque repudiandae, quia voluptatibus illo eius
-                cupiditate nesciunt iusto sint tempore fugiat quam corporis
-                magnam, dolore iste enim eos? Minima?
+                Code development and maintenance, first WordPress was used and
+                then it was migrated to React.
+              </li>
+              <li>
+                Write modern, performant, maintainable code for internal
+                projects
               </li>
             </ul>
           </div>
         </div>
         <div className={`${styles.info} ${openTab !== 2 && styles.hidden}`}>
-          <h3>Trabalho 2</h3>
-          <p>Month Year - Month Year</p>
+          <h3>Itaú Unibanco</h3>
+          <p>Analyst - Apr 2016 - Aug 2018</p>
           <div>
             <ul>
+              <li>Creation of tools and process automation.</li>
               <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                eligendi autem quaerat reprehenderit! Non est quidem
-                consequatur, totam, expedita voluptatum asperiores repudiandae
-                esse voluptas reiciendis nobis aliquid provident tenetur sunt.
-              </li>
-              <li>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Impedit, nihil. Atque repudiandae, quia voluptatibus illo eius
-                cupiditate nesciunt iusto sint tempore fugiat quam corporis
-                magnam, dolore iste enim eos? Minima?
+                Process mapping, preparation of management reports, capacity
+                controls, productivity indicators, inventory and SLA's.
               </li>
             </ul>
           </div>
         </div>
         <div className={`${styles.info} ${openTab !== 3 && styles.hidden}`}>
-          <h3>Trabalho 3</h3>
-          <p>Month Year - Month Year</p>
+          <h3>Itaú Unibanco</h3>
+          <p>Intern - Jun 2014 - Apr 2016</p>
           <div>
             <ul>
               <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                eligendi autem quaerat reprehenderit! Non est quidem
-                consequatur, totam, expedita voluptatum asperiores repudiandae
-                esse voluptas reiciendis nobis aliquid provident tenetur sunt.
+                Monitor occurrences related to technological solutions,
+                detecting opportunities/improvements.
               </li>
+              <li>Assist in project planning and management.</li>
               <li>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Impedit, nihil. Atque repudiandae, quia voluptatibus illo eius
-                cupiditate nesciunt iusto sint tempore fugiat quam corporis
-                magnam, dolore iste enim eos? Minima?
+                Structure and actively participate in the acquisition,
+                logistics, activation, support and maintenance process for
+                users.
               </li>
             </ul>
           </div>

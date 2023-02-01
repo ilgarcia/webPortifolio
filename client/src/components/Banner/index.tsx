@@ -69,10 +69,10 @@ export function Banner() {
             efficient code.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec
-            laoreet arcu. Phasellus congue, libero in bibendum sagittis, erat
-            nisl placerat diam, non faucibus arcu nisi vel magna. Aenean ac diam
-            dapibus, placerat nunc et, hendrerit erat. Proin gravida .
+            I'm a software engineer specializing in building exceptional and
+            practical digital experiences. I'm quietly confident, naturally
+            curious, and perpetually working on improving my chops one design
+            problem at a time.
           </p>
         </div>
       </div>
