@@ -1,0 +1,121 @@
+.reactModalOverlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.reactModalContent {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--blue-900);
+  color: var(--white);
+  box-shadow: 3px 3px 5px black;
+  padding: 2rem 3rem;
+  position: relative;
+  border-radius: 0.25rem;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .reactModalClose {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: opacity(0.6);
+    }
+  }
+
+  .modalContainer {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 60px;
+
+    margin: 1.5rem 0;
+
+    .imageContainer{
+      margin:0; 
+      position:relative; 
+
+      &:after{
+        content: "";
+        background: var(--purple-200);
+        filter: opacity(0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+
+    .modalText {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 2rem;
+      color: var(--slate-100);
+
+      .modalTypeText {
+        text-align: end;
+        margin-bottom: 0.2rem;
+        color: var(--purple-200);
+        font-weight: 500;
+        font-size: 1rem;
+        font-family: var(--fira-font);
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      .codes {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+        gap: 1rem;
+      }
+
+      .links {
+        list-style: none;
+        font-size: 1.8rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .modalBox {
+        width: 150%;
+        height: 9rem;
+        background-color: var(--purple-900);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        text-align: end;
+        box-shadow: 3px 3px 10px black;
+        z-index: 2;
+
+        .textMarkUp {
+          color: var(--purple-200);
+        }
+      }
+    }
+  }
+}

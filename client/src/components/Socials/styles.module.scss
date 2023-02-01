@@ -1,0 +1,56 @@
+.socials {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  left: auto;
+  color: var(--yellow-900);
+
+  .socialsList {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 90px;
+      margin: 10px auto 0;
+      background-color: var(--yellow-900);
+    }
+
+    .emailDisplay {
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      font-family: var(--fira-font);
+    }
+
+    .svgDisplay {
+      font-size: 1.2rem;
+    }
+
+    li {
+      margin: 10px auto;
+      a {
+        padding: 10px;
+      }
+
+      transition: all 0.6s;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--slate-100);
+      }
+    }
+  }
+}
