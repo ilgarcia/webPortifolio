@@ -40,7 +40,7 @@ export function Tabs() {
       <div className={styles.experienceInfo}>
         <div className={`${styles.info} ${openTab !== 1 && styles.hidden}`}>
           <h3>Conta-Mais</h3>
-          <p>Managing PartnerAug - 2018 - Jan 2022</p>
+          <p>Managing Partner - Aug 2018 - Jan 2022</p>
           <div>
             <ul>
               <li>

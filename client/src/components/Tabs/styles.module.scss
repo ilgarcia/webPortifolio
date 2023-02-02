@@ -32,6 +32,7 @@
 
     .active {
       border-left: 2px solid var(--yellow-900) !important;
+      color: var(--yellow-900);
     }
   }
 
@@ -53,6 +54,7 @@
 
       p {
         margin-bottom: 25px;
+        color: var(--slate-500);
       }
 
       ul {

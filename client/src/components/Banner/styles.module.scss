@@ -92,36 +92,40 @@
     }
   }
 
-  .textContainer {
+  .animationContainer {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 0 0.5rem;
-    z-index: 1;
 
-    .bannerText {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      flex-wrap: wrap;
-      width: 80%;
+    .textContainer {
+      width: 100%;
+      padding: 0 0.5rem;
+      z-index: 1;
 
-      h1 {
-        color: var(--yellow-900);
-        font-weight: 400;
-      }
+      .bannerText {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 80%;
 
-      p:first-of-type {
-        font-size: 3.5rem;
-
-        span {
-          color: var(--purple-200);
+        h1 {
+          color: var(--yellow-900);
+          font-weight: 400;
         }
-      }
 
-      p:last-of-type {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        max-width: 720px;
+        p:first-of-type {
+          font-size: 3.5rem;
+
+          span {
+            color: var(--purple-200);
+          }
+        }
+
+        p:last-of-type {
+          font-size: 1.2rem;
+          line-height: 1.5;
+          max-width: 720px;
+        }
       }
     }
   }

@@ -74,7 +74,7 @@ export function Header() {
           </a>
         </m.div>
         <div className={styles.navList}>
-          <m.ul>
+          <ul>
             <m.li variants={itemVariants}>
               <a href="#about">About</a>
             </m.li>
@@ -90,7 +90,7 @@ export function Header() {
             {/* <li>
               <a href="#contact">Contact</a>
             </li> */}
-          </m.ul>
+          </ul>
         </div>
       </m.nav>
     </header>

@@ -1,4 +1,4 @@
-// "use client"
+"use client";
 
 import Image from "next/image";
 import { motion as m, Variants } from "framer-motion";
@@ -15,23 +15,23 @@ import profile from "./img/profile.png";
 import styles from "./page.module.scss";
 import { Socials } from "../components/Socials";
 
-export default function Page() {
-  // const cardVariants: Variants = {
-  //   offscreen: {
-  //     opacity: 0,
-  //     x: -300,
-  //   },
-  //   onscreen: {
-  //     opacity: 1,
-  //     x: 0,
-  //     transition: {
-  //       type: "spring",
-  //       bounce: 0.4,
-  //       duration: 0.8,
-  //     },
-  //   },
-  // };
+const cardVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: -50,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1.2,
+    },
+  },
+};
 
+export default function Page() {
   return (
     <main className={styles.container}>
       <Image
@@ -41,13 +41,13 @@ export default function Page() {
         fill
         sizes="100%"
       />
-      <section
+      <m.section
         id="about"
         className={styles.sectionAbout}
-        // initial="offscreen"
-        // whileInView="onscreen"
-        // viewport={{ once: true, amount: 0.8 }}
-        // variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        variants={cardVariants}
       >
         <h2 className={styles.numberedHeaders}>About Me</h2>
         <div className={styles.aboutMe}>
@@ -90,8 +90,15 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </section>
-      <section id="projects" className={styles.sectionProjects}>
+      </m.section>
+      <m.section
+        id="projects"
+        className={styles.sectionProjects}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        variants={cardVariants}
+      >
         <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
         <div className={styles.cardsHolders}>
           <PortfolioCard
@@ -131,8 +138,15 @@ export default function Page() {
             // icon={<DiHtml5 />}
           />
         </div>
-      </section>
-      <section id="skills" className={styles.sectionSkills}>
+      </m.section>
+      <m.section
+        id="skills"
+        className={styles.sectionSkills}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        variants={cardVariants}
+      >
         <h2 className={styles.numberedHeaders}>My Expertise</h2>
         <div className={styles.expertizeContainer}>
           <div className={styles.expertizeBox}>
@@ -194,11 +208,18 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </section>
-      <section id="experience" className={styles.sectionWork}>
+      </m.section>
+      <m.section
+        id="experience"
+        className={styles.sectionWork}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        variants={cardVariants}
+      >
         <h2 className={styles.numberedHeaders}>Where I've Worked</h2>
         <Tabs />
-      </section>
+      </m.section>
       {/* <section id="contact">
         <div className={styles.containerContact}>
           <Image
