@@ -20,10 +20,10 @@ export default function RootLayout({
         id="__next"
       >
         <ModalProvider>
-          <Header />
-          <Banner />
-          {children}
-          <Footer />
+            <Header />
+            <Banner />
+            {children}
+            <Footer />
         </ModalProvider>
       </body>
     </html>

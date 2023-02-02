@@ -1,10 +1,7 @@
-import Image from "next/image";
+// "use client"
 
-import {
-  RiGithubFill,
-  RiLinkedinBoxFill,
-  RiNewspaperLine,
-} from "react-icons/ri";
+import Image from "next/image";
+import { motion as m, Variants } from "framer-motion";
 
 import { DiHtml5, DiReact } from "react-icons/di";
 
@@ -13,12 +10,28 @@ import { Tabs } from "../components/Tabs";
 
 import graphics from "./img/graphics.png";
 import profile from "./img/profile.png";
-import contact from "./img/contact.png";
+// import contact from "./img/contact.png";
 
 import styles from "./page.module.scss";
 import { Socials } from "../components/Socials";
 
 export default function Page() {
+  // const cardVariants: Variants = {
+  //   offscreen: {
+  //     opacity: 0,
+  //     x: -300,
+  //   },
+  //   onscreen: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       type: "spring",
+  //       bounce: 0.4,
+  //       duration: 0.8,
+  //     },
+  //   },
+  // };
+
   return (
     <main className={styles.container}>
       <Image
@@ -28,7 +41,14 @@ export default function Page() {
         fill
         sizes="100%"
       />
-      <section id="about" className={styles.sectionAbout}>
+      <section
+        id="about"
+        className={styles.sectionAbout}
+        // initial="offscreen"
+        // whileInView="onscreen"
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={cardVariants}
+      >
         <h2 className={styles.numberedHeaders}>About Me</h2>
         <div className={styles.aboutMe}>
           <div>
