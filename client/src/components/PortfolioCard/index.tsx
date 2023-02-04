@@ -8,9 +8,9 @@ import * as Di from "react-icons/di";
 import * as Si from "react-icons/si";
 
 import { PortfolioModal } from "../PortfolioModal";
+import { ToggleContext } from "../../context/ToggleContext";
 
 import styles from "./styles.module.scss";
-import { ModalContext } from "../../context/ModalContext";
 
 Modal.setAppElement("#__next");
 
@@ -28,7 +28,7 @@ interface cardProps {
 
 // export function PortfolioCard({ image, title, date, icon: Icon }: cardProps) {
 export function PortfolioCard({ image, title, date }: cardProps) {
-  const {setModal} = useContext(ModalContext);
+  const { setModal } = useContext(ToggleContext);
 
   const [isPortfolioModalOpen, setPortfolioModalOpen] = useState(false);
 
@@ -37,12 +37,12 @@ export function PortfolioCard({ image, title, date }: cardProps) {
   };
 
   function handleOpenPortfolioModal() {
-    setModal(true)
+    setModal(true);
     setPortfolioModalOpen(true);
   }
 
   function handleClosePortfolioModal() {
-    setModal(false)
+    setModal(false);
     setPortfolioModalOpen(false);
   }
 

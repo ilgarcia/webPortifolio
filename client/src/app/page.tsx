@@ -3,17 +3,17 @@
 import Image from "next/image";
 import { motion as m, Variants } from "framer-motion";
 
-import { DiHtml5, DiReact } from "react-icons/di";
-
-import { PortfolioCard } from "../components/PortfolioCard";
-import { Tabs } from "../components/Tabs";
+import { Experience } from "../components/Experience";
 
 import graphics from "./img/graphics.png";
-import profile from "./img/profile.png";
 // import contact from "./img/contact.png";
 
 import styles from "./page.module.scss";
 import { Socials } from "../components/Socials";
+import { Banner } from "../components/Banner";
+import { About } from "../components/About";
+import { Projects } from "../components/Projects";
+import { Skills } from "../components/Skills";
 
 const cardVariants: Variants = {
   offscreen: {
@@ -33,194 +33,62 @@ const cardVariants: Variants = {
 
 export default function Page() {
   return (
-    <main className={styles.container}>
-      <Image
-        src={graphics}
-        alt="graphics"
-        className={styles.graphicsPic}
-        fill
-        sizes="100%"
-      />
-      <m.section
-        id="about"
-        className={styles.sectionAbout}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={cardVariants}
-      >
-        <h2 className={styles.numberedHeaders}>About Me</h2>
-        <div className={styles.aboutMe}>
-          <div>
-            <div className={styles.profileText}>
-              <p>
-                Hello! My name is Igor, my interest in web development started
-                back in 2018 when I decided to start my own company. I've always
-                been someone who has both a creative and a logical side and i
-                realized it would be the perfect fit if i could use my creative
-                side to design and my logical side to code.
-              </p>
-              <p>
-                Well-organized person, problem solver, independent employee with
-                high attention to detail. I want to keep learning, continue
-                challenging myself, and do interesting things that matter.
-              </p>
-              <p>
-                Here are a few technologies I've been working with recently:
-              </p>
-            </div>
-            <ul className={styles.skillList}>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Node.js</li>
-              <li>TypeScript</li>
-              <li>WordPress</li>
-            </ul>
-          </div>
-          <div className={styles.profilePic}>
-            <div className={styles.wrapper}>
-              <picture>
-                <Image
-                  className={styles.perfilImage}
-                  src={profile}
-                  alt="profile picture"
-                />
-              </picture>
-            </div>
-          </div>
-        </div>
-      </m.section>
-      <m.section
-        id="projects"
-        className={styles.sectionProjects}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={cardVariants}
-      >
-        <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
-        <div className={styles.cardsHolders}>
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-          <PortfolioCard
-            image={"/img/card.png"}
-            title={"Em construção"}
-            date={"29 de Janeiro de 2023"}
-            // icon={<DiHtml5 />}
-          />
-        </div>
-      </m.section>
-      <m.section
-        id="skills"
-        className={styles.sectionSkills}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={cardVariants}
-      >
-        <h2 className={styles.numberedHeaders}>My Expertise</h2>
-        <div className={styles.expertizeContainer}>
-          <div className={styles.expertizeBox}>
-            <div className={styles.boxTitle}>
-              <DiReact />
-              <h3>
-                <span className={styles.maior}>Frontend Dev</span>
-                <span>React, NextJS</span>
-              </h3>
-            </div>
-            <div className={styles.elementContainer}>
-              <p>
-                Passionate about UI/UX. working with a few projects and
-                development experience in HTML, CSS, JS, React and NextJS
-                frameworks.
-              </p>
-            </div>
-          </div>
-          <div className={styles.skillsContainer}>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-            <div className={styles.skillsCard}>
-              <p>HTML5</p>
-              <DiHtml5 />
-            </div>
-          </div>
-        </div>
-      </m.section>
-      <m.section
-        id="experience"
-        className={styles.sectionWork}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={cardVariants}
-      >
-        <h2 className={styles.numberedHeaders}>Where I've Worked</h2>
-        <Tabs />
-      </m.section>
-      {/* <section id="contact">
+    <main>
+      <Banner />
+      <div className={styles.container}>
+        <Image
+          src={graphics}
+          alt="graphics"
+          className={styles.graphicsPic}
+          fill
+          sizes="100%"
+        />
+        <m.section
+          id="about"
+          className={styles.sectionAbout}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={cardVariants}
+        >
+          <h2 className={styles.numberedHeaders}>About Me</h2>
+          <About />
+        </m.section>
+
+        <m.section
+          id="projects"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={cardVariants}
+        >
+          <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
+          <Projects />
+        </m.section>
+        <m.section
+          id="skills"
+          className={styles.sectionSkills}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={cardVariants}
+        >
+          <h2 className={styles.numberedHeaders}>My Expertise</h2>
+          <Skills />
+        </m.section>
+        <m.section
+          id="experience"
+          className={styles.sectionWork}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={cardVariants}
+        >
+          <h2 className={styles.numberedHeaders}>Where I've Worked</h2>
+          
+          <Experience />
+        </m.section>
+        {/* <section id="contact">
         <div className={styles.containerContact}>
           <Image
             src={contact}
@@ -273,6 +141,7 @@ export default function Page() {
           </div>
         </div>
       </section> */}
+      </div>
       <Socials />
     </main>
   );

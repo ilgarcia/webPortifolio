@@ -1,5 +1,6 @@
 import Modal from "react-modal";
 import Image from "next/image";
+
 import { AiOutlineClose } from "react-icons/ai";
 import { RiGithubFill } from "react-icons/ri";
 import { BiLinkExternal } from "react-icons/bi";

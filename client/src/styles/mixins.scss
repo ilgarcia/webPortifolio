@@ -1,0 +1,26 @@
+$mediaMaxWidth: 1024px;
+$mediaMinWidth: 425px;
+
+@mixin cellphone {
+  @media (max-width: #{$mediaMinWidth}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mediaMinWidth + 1}) and (max-width: #{$mediaMaxWidth - 1px}) {
+    @content;
+  }
+}
+
+@mixin bellowDesktop {
+  @media (max-width: #{$mediaMaxWidth - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$mediaMaxWidth}) {
+    @content;
+  }
+}

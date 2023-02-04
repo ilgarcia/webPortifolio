@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import styles from "./styles.module.scss";
 
-export function Tabs() {
+export function Experience() {
   const [openTab, setOpenTab] = useState(1);
   return (
     <div className={styles.experienceContainer}>
