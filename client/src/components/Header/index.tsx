@@ -91,7 +91,7 @@ export function Header() {
     <header
       className={`${styles.headerContainer}  ${
         !visible && styles.navbarHidden
-      } ${above ? styles.navbarAbove : styles.navbarBellow}`}
+      } ${above ? styles.navbarBorder : styles.navbarNoBorder}`}
     >
       <m.nav
         initial="hidden"

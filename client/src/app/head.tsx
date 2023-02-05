@@ -2,6 +2,7 @@ export default function Head() {
   return (
     <>
       <title>l.garcia</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
         name="description"
         content="I'm a software engineer specializing in building exceptional and

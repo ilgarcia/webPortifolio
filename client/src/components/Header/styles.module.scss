@@ -4,24 +4,39 @@
   .hamNavBar {
     display: none;
   }
+
+  .headerContent {
+    padding: 0 1rem;
+
+    .logo {
+      font-size: 1.7rem;
+    }
+  }
 }
 
 @include lessDesktop {
   .horizontalList {
     display: none;
   }
+
+  .headerContent {
+    padding: 0 2rem;
+
+    .logo {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .headerContainer {
   height: 4rem;
   backdrop-filter: blur(8px);
-  background: var(--black-opacity);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
-  transition: top 1s ease, border-bottom 0.6s ease-in-out;
+  z-index: 10;
+  transition: all 0.6s ease-in-out;
   box-shadow: 0 5px 30px -10px var(--black);
 }
 
@@ -29,28 +44,24 @@
   top: -75px;
 }
 
-.navbarBellow {
+.navbarNoBorder {
   border-bottom: 1px solid var(--black);
 }
 
-.navbarAbove {
+.navbarBorder {
   border-bottom: 1px solid var(--yellow-900);
 }
 
 .headerContent {
-  max-width: 1220px;
+  max-width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
   .logo {
-    font-size: 1.7rem;
     font-weight: 700;
 
     span:first-child {
@@ -64,7 +75,6 @@
   }
 
   .horizontalList {
-    font-size: 1rem;
     ul {
       display: flex;
       align-items: center;
@@ -79,73 +89,6 @@
     }
   }
 
-  .asideList {
-    font-size: 1.3rem;
-
-    li {
-      & + li {
-        margin-top: 1rem;
-      }
-    }
-  }
-
-  .navList {
-    ul {
-      counter-reset: item;
-
-      li {
-        a::before {
-          counter-increment: item;
-          content: "0" counter(item) ".";
-          color: var(--yellow-900);
-          margin-right: 0.5rem;
-          text-align: right;
-          font-family: var(--fira-font);
-        }
-
-        transition: color 0.5s ease;
-
-        &:hover {
-          color: var(--yellow-900);
-        }
-      }
-    }
-  }
-
-  .sideBar {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 50px 10px;
-    width: min(75vw, 400px);
-    height: 100vh;
-    outline: 0px;
-    background-color: var(--purple-900);
-    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
-    z-index: 9;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  .disabled {
-    .sideBar {
-      transform: translateX(100vw);
-      visibility: hidden;
-    }
-  }
-
-  .enabled {
-    .sideBar {
-      transform: translateX(0vw);
-      visibility: visible;
-    }
-  }
-
   .disabled {
     .hamStyled {
       .hamBox {
@@ -154,14 +97,13 @@
           transform: rotate(0deg);
 
           &::before {
-            width: 120% !important;
+            width: 120%;
             top: -10px;
-            opacity: 1;
             transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
           }
 
           &::after {
-            width: 80% !important;
+            width: 80%;
             bottom: -10px;
             transform: rotate(0deg);
             transition: bottom 0.1s ease-in 0.25s,
@@ -169,6 +111,11 @@
           }
         }
       }
+    }
+
+    .sideBar {
+      transform: translateX(100vw);
+      visibility: hidden;
     }
   }
 
@@ -196,13 +143,16 @@
         }
       }
     }
+
+    .sideBar {
+      transform: translateX(0vw);
+      visibility: visible;
+    }
   }
 
   .hamStyled {
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
     z-index: 10;
@@ -248,5 +198,56 @@
         }
       }
     }
+  }
+
+  .asideList {
+    font-size: 1.3rem;
+
+    li {
+      & + li {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .navList {
+    ul {
+      counter-reset: item;
+
+      li {
+        a::before {
+          counter-increment: item;
+          content: "0" counter(item) ".";
+          color: var(--yellow-900);
+          margin-right: 0.5rem;
+          text-align: right;
+          font-family: var(--fira-font);
+        }
+
+        transition: color 0.5s ease;
+
+        &:hover {
+          color: var(--yellow-900);
+        }
+      }
+    }
+  }
+
+  .sideBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 50px 10px;
+    width: min(70vw, 350px);
+    height: 100vh;
+    outline: 0px;
+    background-color: var(--purple-900);
+    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+    z-index: 9;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
