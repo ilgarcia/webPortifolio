@@ -13,7 +13,7 @@ $mediaMinWidth: 425px;
   }
 }
 
-@mixin bellowDesktop {
+@mixin lessDesktop {
   @media (max-width: #{$mediaMaxWidth - 1px}) {
     @content;
   }

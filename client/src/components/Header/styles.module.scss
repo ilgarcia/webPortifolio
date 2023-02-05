@@ -1,5 +1,17 @@
 @import "../../styles/mixins.scss";
 
+@include desktop {
+  .hamNavBar {
+    display: none;
+  }
+}
+
+@include lessDesktop {
+  .horizontalList {
+    display: none;
+  }
+}
+
 .headerContainer {
   height: 4rem;
   backdrop-filter: blur(8px);
@@ -68,6 +80,13 @@
   }
 
   .asideList {
+    font-size: 1.3rem;
+
+    li {
+      & + li {
+        margin-top: 1rem;
+      }
+    }
   }
 
   .navList {
@@ -107,7 +126,7 @@
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0px;
-    background-color: #112240;
+    background-color: var(--purple-900);
     box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     z-index: 9;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

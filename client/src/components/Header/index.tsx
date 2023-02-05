@@ -1,9 +1,21 @@
 "use client";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { motion as m, Variants } from "framer-motion";
 import { ToggleContext } from "../../context/ToggleContext";
 
 import styles from "./styles.module.scss";
+
+const navVariants: Variants = {
+  visible: {
+    transition: {
+      type: "spring",
+      bounce: 0,
+      duration: 0.7,
+      delayChildren: 0.3,
+      staggerChildren: 0.05,
+    },
+  },
+};
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: -50 },
@@ -20,7 +32,9 @@ export function Header() {
   const [visible, setVisible] = useState(true);
   const [above, setAbove] = useState(false);
 
-  const [active, setActive] = useState(false);
+  const [enabled, setEnabled] = useState(false);
+
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -34,6 +48,19 @@ export function Header() {
   useEffect(() => {
     setVisible(!modal);
   }, [modal]);
+
+  useEffect(() => {
+    if (!enabled) return;
+    const handleClickOutside = (event: { target: any }) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        handleNavBar();
+      }
+    };
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [enabled]);
 
   function handleScroll() {
     const currentYOffset = window.pageYOffset;
@@ -49,8 +76,15 @@ export function Header() {
   }
 
   function handleNavBar() {
-    setActive(!active);
-    document.body.classList.toggle('blur')
+    setEnabled(!enabled);
+    document.body.classList.toggle("blur");
+  }
+
+  function handleClick() {
+    if (enabled) {
+      setEnabled(!enabled);
+      document.body.classList.toggle("blur");
+    }
   }
 
   return (
@@ -62,17 +96,7 @@ export function Header() {
       <m.nav
         initial="hidden"
         animate="visible"
-        variants={{
-          visible: {
-            transition: {
-              type: "spring",
-              bounce: 0,
-              duration: 0.7,
-              delayChildren: 0.3,
-              staggerChildren: 0.05,
-            },
-          },
-        }}
+        variants={navVariants}
         className={styles.headerContent}
       >
         <m.div variants={itemVariants} className={styles.logo}>
@@ -83,23 +107,26 @@ export function Header() {
         <div className={`${styles.navList} ${styles.horizontalList}`}>
           <ul>
             <m.li variants={itemVariants}>
-              <a href="#about">About</a>
+              <a href="#about" onClick={handleClick}>About</a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#projects">Projects</a>
+              <a href="#projects" onClick={handleClick}>Projects</a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#skills">Skills</a>
+              <a href="#skills" onClick={handleClick}>Skills</a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#experience">Experience</a>
+              <a href="#experience" onClick={handleClick}>Experience</a>
             </m.li>
             {/* <li>
               <a href="#contact">Contact</a>
             </li> */}
           </ul>
         </div>
-        <div className={active ? `${styles.enabled}` : `${styles.disabled}`}>
+        <div
+          className={`${styles.hamNavBar} ${enabled ? styles.enabled : styles.disabled}`}
+          ref={ref}
+        >
           <button className={styles.hamStyled} onClick={handleNavBar}>
             <div className={styles.hamBox}>
               <div className={styles.hamBoxInner}></div>
@@ -109,16 +136,24 @@ export function Header() {
             <div className={`${styles.navList} ${styles.asideList}`}>
               <ul>
                 <m.li variants={itemVariants}>
-                  <a href="#about">About</a>
+                  <a href="#about" onClick={handleClick}>
+                    About
+                  </a>
                 </m.li>
                 <m.li variants={itemVariants}>
-                  <a href="#projects">Projects</a>
+                  <a href="#projects" onClick={handleClick}>
+                    Projects
+                  </a>
                 </m.li>
                 <m.li variants={itemVariants}>
-                  <a href="#skills">Skills</a>
+                  <a href="#skills" onClick={handleClick}>
+                    Skills
+                  </a>
                 </m.li>
                 <m.li variants={itemVariants}>
-                  <a href="#experience">Experience</a>
+                  <a href="#experience" onClick={handleClick}>
+                    Experience
+                  </a>
                 </m.li>
                 {/* <li>
               <a href="#contact">Contact</a>

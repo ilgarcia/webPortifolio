@@ -51,10 +51,19 @@ body {
   scroll-behavior: smooth;
 }
 
-body.blur{
+.blur{
   overflow: hidden;
   margin-right: 12px;
+
+  main{
+    filter: blur(5px) brightness(0.7);
+    transition: var(--transition);
+    pointer-events: none;
+    user-select: none;
+  }
+
 }
+
 
 button {
   cursor: pointer;
