@@ -6,8 +6,6 @@
   }
 
   .headerContent {
-    padding: 0 1rem;
-
     .logo {
       font-size: 1.7rem;
     }
@@ -20,8 +18,6 @@
   }
 
   .headerContent {
-    padding: 0 2rem;
-
     .logo {
       font-size: 1.5rem;
     }
@@ -56,6 +52,7 @@
   max-width: 1024px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
 
   display: flex;
   align-items: center;

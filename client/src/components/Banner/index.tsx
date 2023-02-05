@@ -15,7 +15,7 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delay: 1
+      delay: 1,
     },
   },
 };
@@ -40,7 +40,7 @@ const itemVariants: Variants = {
 
 export function Banner() {
   return (
-    <section className={styles.bannerContainer}>
+    <section className={styles.banner}>
       <Image
         src={graphicsBanner}
         alt="Banner picture"
@@ -52,7 +52,7 @@ export function Banner() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className={styles.animationContainer}
+        className={styles.container}
       >
         <m.div className={styles.starOne} variants={starVariants}>
           <Image
@@ -99,20 +99,18 @@ export function Banner() {
             sizes="100%"
           />
         </m.div>
-        <div className={styles.textContainer}>
-          <div className={styles.bannerText}>
-            <m.h1 variants={itemVariants}>Hi There! I'm Igor</m.h1>
-            <m.p variants={itemVariants}>
-              A <span>Frontend developer</span> who writes clean, elegant and
-              efficient code.
-            </m.p>
-            <m.p variants={itemVariants}>
-              I'm a software engineer specializing in building exceptional and
-              practical digital experiences. I'm quietly confident, naturally
-              curious, and perpetually working on improving my chops one design
-              problem at a time.
-            </m.p>
-          </div>
+        <div className={styles.bannerText}>
+          <m.h1 variants={itemVariants}>Hi There! I'm Igor</m.h1>
+          <m.p variants={itemVariants}>
+            A <span>Frontend developer</span> who writes clean, elegant and
+            efficient code.
+          </m.p>
+          <m.p variants={itemVariants}>
+            I'm a software engineer specializing in building exceptional and
+            practical digital experiences. I'm quietly confident, naturally
+            curious, and perpetually working on improving my chops one design
+            problem at a time.
+          </m.p>
         </div>
       </m.div>
     </section>

@@ -1,5 +1,7 @@
-$mediaMaxWidth: 1024px;
-$mediaMinWidth: 425px;
+$mediaMaxEqualWidth: 1024px;
+$mediaMaxWidth: 1023px;
+$mediaMinEqualWidth: 425px;
+$mediaMinWidth: 424px;
 
 @mixin cellphone {
   @media (max-width: #{$mediaMinWidth}) {
@@ -8,19 +10,19 @@ $mediaMinWidth: 425px;
 }
 
 @mixin tablet {
-  @media (min-width: #{$mediaMinWidth + 1}) and (max-width: #{$mediaMaxWidth - 1px}) {
+  @media (min-width: #{$mediaMinEqualWidth}) and (max-width: #{$mediaMaxWidth}) {
     @content;
   }
 }
 
 @mixin lessDesktop {
-  @media (max-width: #{$mediaMaxWidth - 1px}) {
+  @media (max-width: #{$mediaMaxWidth}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$mediaMaxWidth}) {
+  @media (min-width: #{$mediaMaxEqualWidth}) {
     @content;
   }
 }
