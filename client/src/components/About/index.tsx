@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 export function About() {
   return (
-    <div className={styles.aboutMe}>
+    <div className={styles.container}>
       <div>
         <div className={styles.profileText}>
           <p>

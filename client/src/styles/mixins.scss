@@ -9,6 +9,12 @@ $mediaMinWidth: 424px;
   }
 }
 
+@mixin lessTablet {
+  @media (max-width: #{$mediaMaxWidth}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: #{$mediaMinEqualWidth}) and (max-width: #{$mediaMaxWidth}) {
     @content;

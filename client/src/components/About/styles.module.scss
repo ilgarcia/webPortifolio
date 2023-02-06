@@ -1,7 +1,30 @@
-.aboutMe {
+@import "../../styles/mixins.scss";
+
+@include lessTablet {
+  .container {
+    display: block !important;
+
+    .profilePic {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@include cellphone {
+  .container {
+    .profilePic {
+      .perfilImage {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.container {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 60px;
+  gap: 50px;
 
   .profileText {
     p {
@@ -32,38 +55,10 @@
   }
 
   .profilePic {
-    max-width: 300px;
+    text-align: center;
 
-    .wrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-
-      .perfilImage {
-        border: 10px solid var(--brown-500);
-        position: relative;
-      }
-
-      &::after {
-        background: #fff;
-        content: "";
-        height: 400px;
-        left: -160px;
-        opacity: 0.2;
-        position: absolute;
-        top: -50px;
-        transform: rotate(35deg);
-        transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-        width: 50px;
-        z-index: 1000;
-      }
-    }
-
-    .wrapper:hover {
-      &::after {
-        left: 140%;
-        transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-      }
+    .perfilImage {
+      border: 10px solid var(--brown-500);
     }
   }
 }
