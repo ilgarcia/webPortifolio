@@ -33,15 +33,13 @@ export function About() {
         </ul>
       </div>
       <div className={styles.profilePic}>
-        <div className={styles.wrapper}>
-          <picture>
-            <Image
-              className={styles.perfilImage}
-              src={profile}
-              alt="profile picture"
-            />
-          </picture>
-        </div>
+        <picture>
+          <Image
+            className={styles.perfilImage}
+            src={profile}
+            alt="profile picture"
+          />
+        </picture>
       </div>
     </div>
   );

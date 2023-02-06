@@ -48,7 +48,7 @@ export default function Page() {
           className={styles.sectionAbout}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
         >
           <h2 className={styles.numberedHeaders}>About Me</h2>
@@ -59,7 +59,7 @@ export default function Page() {
           id="projects"
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
         >
           <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
@@ -70,7 +70,7 @@ export default function Page() {
           className={styles.sectionSkills}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
         >
           <h2 className={styles.numberedHeaders}>My Expertise</h2>
@@ -81,7 +81,7 @@ export default function Page() {
           className={styles.sectionWork}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
         >
           <h2 className={styles.numberedHeaders}>Where I've Worked</h2>
