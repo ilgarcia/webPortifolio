@@ -89,16 +89,6 @@ export default function Page() {
           <Experience />
         </m.section>
         {/* <m.section id="contact"> */}
-          {/* <div className={styles.containerContact}>
-            <Image
-              src={contact}
-              alt="Contact me"
-              className={styles.contactPic}
-              fill
-              sizes="100%"
-            />
-            <h2>CONTACT ME</h2>
-          </div> */}
           <Socials />
         {/* </m.section> */}
       </div>
