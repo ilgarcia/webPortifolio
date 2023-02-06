@@ -76,8 +76,8 @@ export function Socials() {
           src={contact}
           alt="Contact me"
           className={styles.contactPic}
-          fill
-          sizes="100%"
+          // fill
+          // sizes="100%"
         />
         <h2>CONTACT ME</h2>
         <div className={styles.socialsLinks}>

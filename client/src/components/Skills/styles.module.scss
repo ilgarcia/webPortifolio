@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .expertizeContainer {
   display: flex;
 
@@ -66,16 +68,6 @@
           content: "<h3>";
           margin-top: 5px;
         }
-      }
-
-      &::after {
-        content: "";
-        width: 0;
-        height: 90px;
-        position: absolute;
-        border: 0.1px solid var(--gray-300);
-        bottom: 205px;
-        left: 65px;
       }
     }
   }

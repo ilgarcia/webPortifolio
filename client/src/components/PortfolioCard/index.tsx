@@ -37,11 +37,13 @@ export function PortfolioCard({ image, title, date }: cardProps) {
   };
 
   function handleOpenPortfolioModal() {
+    document.body.classList.toggle("blur");
     setModal(true);
     setPortfolioModalOpen(true);
   }
 
   function handleClosePortfolioModal() {
+    document.body.classList.toggle("blur");
     setModal(false);
     setPortfolioModalOpen(false);
   }

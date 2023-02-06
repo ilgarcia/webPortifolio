@@ -54,14 +54,7 @@ export function Skills() {
         <p>HTML5</p>
         <DiHtml5 />
       </div>
-      <div className={styles.skillsCard}>
-        <p>HTML5</p>
-        <DiHtml5 />
-      </div>
-      <div className={styles.skillsCard}>
-        <p>HTML5</p>
-        <DiHtml5 />
-      </div>
+
     </div>
   </div>
   );

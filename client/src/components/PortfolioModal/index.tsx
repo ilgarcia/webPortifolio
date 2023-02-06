@@ -33,11 +33,13 @@ export function PortfolioModal({
         <AiOutlineClose />
       </button>
       <div className={styles.modalContainer}>
-        <div>
-          <figure className={styles.imageContainer}>
-            <Image width={600} height={400} src={tela} alt="project image" />
-          </figure>
-        </div>
+        <figure className={styles.imageContainer}>
+          <Image
+            className={styles.image}
+            src={tela}
+            alt="project image"
+          />
+        </figure>
         <div className={styles.modalText}>
           <div>
             <div className={styles.modalTypeText}>Tipo de projeto</div>

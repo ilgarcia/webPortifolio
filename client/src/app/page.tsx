@@ -59,7 +59,7 @@ export default function Page() {
           id="projects"
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={cardVariants}
         >
           <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
