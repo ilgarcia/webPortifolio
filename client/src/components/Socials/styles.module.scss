@@ -1,3 +1,16 @@
+@import "../../styles/mixins.scss";
+
+@include lessDesktop {
+  .socials {
+    display: none;
+  }
+}
+@include desktop {
+  .containerContact {
+    display: none;
+  }
+}
+
 .socials {
   width: 40px;
   position: fixed;
@@ -51,6 +64,45 @@
       &:focus {
         color: var(--slate-100);
       }
+    }
+  }
+}
+
+.containerContact {
+  text-align: center;
+  position: relative;
+  margin-bottom: 8rem;
+
+  .contactPic {
+    position: relative !important;
+    top: 20px !important;
+    height: unset !important;
+    width: unset !important;
+    object-fit: contain;
+  }
+
+  .socialsLinks {
+    color: var(--slate-100);
+    margin-top: 2rem;
+    p {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      color: var(--yellow-900);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+
+      li {
+        margin: 0 1rem;
+      }
+    }
+
+    .emailDisplay{
+      color: var(--slate-500);
     }
   }
 }
