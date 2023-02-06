@@ -88,9 +88,15 @@ export default function Page() {
 
           <Experience />
         </m.section>
-        {/* <m.section id="contact"> */}
+        <m.section
+          id="contact"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={cardVariants}
+        >
           <Socials />
-        {/* </m.section> */}
+        </m.section>
       </div>
     </main>
   );

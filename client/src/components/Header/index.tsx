@@ -26,6 +26,32 @@ const itemVariants: Variants = {
   },
 };
 
+const hamNavVariants: Variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
+
+const hamItemVariants: Variants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
 export function Header() {
   const { modal } = useContext(ToggleContext);
 
@@ -107,16 +133,24 @@ export function Header() {
         <div className={`${styles.navList} ${styles.horizontalList}`}>
           <ul>
             <m.li variants={itemVariants}>
-              <a href="#about" onClick={handleClick}>About</a>
+              <a href="#about" onClick={handleClick}>
+                About
+              </a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#projects" onClick={handleClick}>Projects</a>
+              <a href="#projects" onClick={handleClick}>
+                Projects
+              </a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#skills" onClick={handleClick}>Skills</a>
+              <a href="#skills" onClick={handleClick}>
+                Skills
+              </a>
             </m.li>
             <m.li variants={itemVariants}>
-              <a href="#experience" onClick={handleClick}>Experience</a>
+              <a href="#experience" onClick={handleClick}>
+                Experience
+              </a>
             </m.li>
             {/* <li>
               <a href="#contact">Contact</a>
@@ -124,7 +158,9 @@ export function Header() {
           </ul>
         </div>
         <div
-          className={`${styles.hamNavBar} ${enabled ? styles.enabled : styles.disabled}`}
+          className={`${styles.hamNavBar} ${
+            enabled ? styles.enabled : styles.disabled
+          }`}
           ref={ref}
         >
           <button className={styles.hamStyled} onClick={handleNavBar}>
@@ -132,35 +168,57 @@ export function Header() {
               <div className={styles.hamBoxInner}></div>
             </div>
           </button>
-          <aside className={styles.sideBar}>
+          <m.aside className={styles.sideBar} animate={enabled ? "open" : "closed"}>
             <div className={`${styles.navList} ${styles.asideList}`}>
-              <ul>
-                <m.li variants={itemVariants}>
+              <m.ul variants={hamNavVariants}>
+                <m.li
+                  variants={hamItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <a href="#about" onClick={handleClick}>
                     About
                   </a>
                 </m.li>
-                <m.li variants={itemVariants}>
+                <m.li
+                  variants={hamItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <a href="#projects" onClick={handleClick}>
                     Projects
                   </a>
                 </m.li>
-                <m.li variants={itemVariants}>
+                <m.li
+                  variants={hamItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <a href="#skills" onClick={handleClick}>
                     Skills
                   </a>
                 </m.li>
-                <m.li variants={itemVariants}>
+                <m.li
+                  variants={hamItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.8 }}
+                >
                   <a href="#experience" onClick={handleClick}>
                     Experience
                   </a>
                 </m.li>
-                {/* <li>
-              <a href="#contact">Contact</a>
-            </li> */}
-              </ul>
+                <m.li
+                  variants={hamItemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <a href="#contact" onClick={handleClick}>
+                    Contact
+                  </a>
+                </m.li>
+              </m.ul>
             </div>
-          </aside>
+          </m.aside>
         </div>
       </m.nav>
     </header>
