@@ -1,26 +1,48 @@
-.experienceContainer {
-  display: flex;
-  max-width: 900px;
-  .experienceTabs {
-    position: relative;
-    z-index: 3;
-    width: max-content;
+@import "../../styles/mixins.scss";
 
-    .tabs {
-      position: relative;
-      // transition: var(--transition);
+@include lessTablet {
+  .experienceContainer {
+    .experienceTabs {
       display: flex;
-      -webkit-box-align: center;
-      align-items: center;
-      width: 100%;
-      height: auto;
-      padding: 0.8rem 1.5rem 0.9rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+
+      .tabs {
+        border-bottom: 2px solid var(--gray-300);
+      }
+
+      .active {
+        border-bottom: 2px solid var(--yellow-900) !important;
+      }
+    }
+  }
+}
+
+@include overTablet {
+  .experienceContainer {
+    display: flex;
+    max-width: 900px;
+    .tabs {
       border-left: 2px solid var(--gray-300);
+    }
+
+    .active {
+      border-left: 2px solid var(--yellow-900) !important;
+    }
+  }
+}
+
+.experienceContainer {
+  .experienceTabs {
+    .tabs {
+      display: flex;
+      width: 100%;
+      padding: 0.8rem 1.5rem 0.9rem;
+      
       background-color: transparent;
       color: var(--white);
       font-size: inherit;
 
-      text-align: left;
       white-space: nowrap;
 
       transition: background-color 0.5s ease;
@@ -31,14 +53,12 @@
     }
 
     .active {
-      border-left: 2px solid var(--yellow-900) !important;
       color: var(--yellow-900);
     }
   }
 
   .experienceInfo {
-    position: relative;
-    width: 100%;
+
     margin-left: 20px;
     .info {
       width: 100%;

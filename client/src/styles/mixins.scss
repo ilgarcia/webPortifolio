@@ -20,6 +20,12 @@ $mediaMinWidth: 423px;
   }
 }
 
+@mixin overTablet {
+  @media (min-width: #{$mediaMidWidth}) {
+    @content;
+  }
+}
+
 @mixin lessDesktop {
   @media (max-width: #{$mediaMaxWidth}) {
     @content;

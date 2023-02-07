@@ -18,6 +18,22 @@ const itemVariants: Variants = {
   },
 };
 
+const cardVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: -50,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1.2,
+    },
+  },
+};
+
 export function Socials() {
   return (
     <div>
@@ -71,12 +87,14 @@ export function Socials() {
           </li>
         </ul>
       </m.div>
-      <div className={styles.containerContact}>
-        <Image
-          src={contact}
-          alt="Contact me"
-          className={styles.contactPic}
-        />
+      <m.div
+        className={styles.containerContact}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={cardVariants}
+      >
+        <Image src={contact} alt="Contact me" className={styles.contactPic} />
         <h2>CONTACT ME</h2>
         <div className={styles.socialsLinks}>
           <p>
@@ -126,7 +144,7 @@ export function Socials() {
             </a>
           </p>
         </div>
-      </div>
+      </m.div>
     </div>
   );
 }

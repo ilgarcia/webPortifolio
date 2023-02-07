@@ -88,16 +88,13 @@ export default function Page() {
 
           <Experience />
         </m.section>
-        <m.section
+        <section
           id="contact"
           className={styles.sectionContact}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={cardVariants}
+
         >
           <Socials />
-        </m.section>
+        </section>
       </div>
     </main>
   );
