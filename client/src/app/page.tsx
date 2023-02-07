@@ -90,6 +90,7 @@ export default function Page() {
         </m.section>
         <m.section
           id="contact"
+          className={styles.sectionContact}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}

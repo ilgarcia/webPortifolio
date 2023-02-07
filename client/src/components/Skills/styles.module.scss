@@ -1,13 +1,44 @@
 @import "../../styles/mixins.scss";
 
+@include desktop {
+  .expertizeContainer {
+    .skillsContainer {
+      .skillsCard {
+        padding: 1.5rem 2rem;
+
+        svg {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@include lessDesktop {
+  .expertizeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    .skillsContainer {
+      .skillsCard {
+        padding: 1rem 1.5rem;
+
+        svg {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
 .expertizeContainer {
   display: flex;
 
   .expertizeBox {
     border: 1px solid var(--white);
     padding: 2rem;
-    width: 350px;
-    height: 330px;
+    max-width: 320px;
+    height: fit-content;
 
     .boxTitle {
       display: flex;
@@ -79,7 +110,6 @@
     gap: 1rem;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 60%;
 
     .skillsCard {
       display: flex;
@@ -88,17 +118,13 @@
       gap: 0.5rem;
 
       height: fit-content;
-      padding: 1.5rem 2rem;
+
       color: var(--yellow-900);
       background-color: var(--blue-900);
       font-size: 0.8rem;
 
       border-radius: 20px 0 0 0;
       border-bottom: 4px solid var(--yellow-900);
-
-      svg {
-        font-size: 3rem;
-      }
 
       transition: transform 0.5s ease;
 
