@@ -91,7 +91,7 @@ export function Socials() {
         className={styles.containerContact}
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={cardVariants}
       >
         <Image src={contact} alt="Contact me" className={styles.contactPic} />
