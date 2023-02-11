@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 mongoose.set("strictQuery", false);
 mongoose.connect(
-  "mongodb+srv://ilgarcia:WebPort2023@cluster0.qhgthjc.mongodb.net/webPortfolio?retryWrites=true&w=majority",
+  process.env.SERVER_KEY,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
