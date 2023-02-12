@@ -37,10 +37,15 @@ export function Skills() {
       });
   }
 
-  function dynamicIcon( icon: any): JSX.Element {
-    const IconComponent = Di[icon as keyof typeof Di];
-
-    return <IconComponent />
+  function dynamicIcon(icon: string, module: string): JSX.Element {
+    if (module === "Di") {
+      const IconComponent = Di[icon as keyof typeof Di];
+      return <IconComponent />;
+    } else if (module === "Si") {
+      const IconComponent = Di[icon as keyof typeof Di];
+      return <IconComponent />;
+    }
+    return <Di.DiCode/>
   }
 
   return (
@@ -65,7 +70,7 @@ export function Skills() {
           return (
             <div key={skill._id} className={styles.skillsCard}>
               <p>{skill.title}</p>
-              {dynamicIcon(skill.icon)}
+              {dynamicIcon(skill.icon, skill.module)}
             </div>
           );
         })}
