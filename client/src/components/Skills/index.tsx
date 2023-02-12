@@ -42,7 +42,7 @@ export function Skills() {
       const IconComponent = Di[icon as keyof typeof Di];
       return <IconComponent />;
     } else if (module === "Si") {
-      const IconComponent = Di[icon as keyof typeof Di];
+      const IconComponent = Si[icon as keyof typeof Si];
       return <IconComponent />;
     }
     return <Di.DiCode/>
