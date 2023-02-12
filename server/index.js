@@ -1,7 +1,7 @@
 const express = require('express')
 
 const cors = require('cors')
-const corsOptions = require('./config/corsOption.js')
+// const corsOptions = require('./config/corsOption.js')
 
 const routes = require('./routes/routes.js')
 
@@ -17,6 +17,12 @@ db.once("open", () => {
   console.log("Banco carregado");
 });
 
+var corsOptions = {
+  origin: 'https://www.ilgarcia.com',
+  optionsSuccessStatus: 200 
+}
+
+// app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 
 app.use(express.json());
