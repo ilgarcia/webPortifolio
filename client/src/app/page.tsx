@@ -6,7 +6,6 @@ import { motion as m, Variants } from "framer-motion";
 import { Experience } from "../components/Experience";
 
 import graphics from "./img/graphics.png";
-import contact from "./img/contact.png";
 
 import styles from "./page.module.scss";
 import { Socials } from "../components/Socials";
@@ -54,7 +53,6 @@ export default function Page() {
           <h2 className={styles.numberedHeaders}>About Me</h2>
           <About />
         </m.section>
-
         <m.section
           id="projects"
           initial="offscreen"
@@ -91,7 +89,6 @@ export default function Page() {
         <section
           id="contact"
           className={styles.sectionContact}
-
         >
           <Socials />
         </section>

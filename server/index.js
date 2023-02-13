@@ -1,11 +1,11 @@
-const express = require('express')
+const express = require("express");
 
-const cors = require('cors')
-// const corsOptions = require('./config/corsOption.js')
+const cors = require("cors");
+const corsOptions = require('./config/corsOption.js')
 
-const routes = require('./routes/routes.js')
+const routes = require("./routes/routes.js");
 
-const db = require('./database/mongoose.js')
+const db = require("./database/mongoose.js");
 
 const app = express();
 const port = 8000;
@@ -17,12 +17,12 @@ db.once("open", () => {
   console.log("Banco carregado");
 });
 
-var corsOptions = {
-  origin: 'https://www.ilgarcia.com',
-  optionsSuccessStatus: 200 
-}
+// var corsOptions = {
+//   // origin: 'https://www.ilgarcia.com',
+//   origin: "http://localhost:3000",
+//   optionsSuccessStatus: 200,
+// };
 
-// app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 
 app.use(express.json());

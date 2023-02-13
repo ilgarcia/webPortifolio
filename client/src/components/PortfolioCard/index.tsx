@@ -1,11 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { useContext, useState } from "react";
 import Modal from "react-modal";
 
-
-import { IconBaseProps, icons } from "react-icons";
-import * as Di from "react-icons/di";
 import * as Si from "react-icons/si";
 
 import { PortfolioModal } from "../PortfolioModal";
@@ -15,27 +13,25 @@ import styles from "./styles.module.scss";
 
 Modal.setAppElement("#__next");
 
+interface iconProps {
+  _id: string;
+  title: string;
+  module: string;
+  icon: string;
+}
+
 interface cardProps {
+  id: string;
   image: string;
   title: string;
   date: string;
-  // icon: React.ComponentType<IconBaseProps>;
-  // icon: JSX.Element;
-  // icons?: React.ReactElement[];
-  // icons?: {[key: string]: any};
-  // (icons?: any[]): ReactNode[]
-  // (icons?: any[]): JSX.Element[];
+  icons: iconProps[];
 }
 
-// export function PortfolioCard({ image, title, date, icon: Icon }: cardProps) {
-export function PortfolioCard({ image, title, date }: cardProps) {
+export function PortfolioCard({ id, image, title, date, icons }: cardProps) {
   const { setModal } = useContext(ToggleContext);
 
   const [isPortfolioModalOpen, setPortfolioModalOpen] = useState(false);
-
-  const cardIcons: { icons: JSX.Element[] } = {
-    icons: [<Di.DiHtml5 />, <Di.DiCss3 />, <Si.SiNextdotjs />],
-  };
 
   function handleOpenPortfolioModal() {
     document.body.classList.toggle("blur");
@@ -47,6 +43,11 @@ export function PortfolioCard({ image, title, date }: cardProps) {
     document.body.classList.toggle("blur");
     setModal(false);
     setPortfolioModalOpen(false);
+  }
+
+  function dynamicIcon(icon: string, module: string): JSX.Element {
+    const IconComponent = Si[icon as keyof typeof Si];
+    return <IconComponent />;
   }
 
   return (
@@ -62,10 +63,10 @@ export function PortfolioCard({ image, title, date }: cardProps) {
           />
           <h3>{title}</h3>
           <div className={styles.badgesContainer}>
-            {cardIcons.icons.map((icon, index) => {
+            {icons.map((icon) => {
               return (
-                <div key={index} className={styles.badges}>
-                  {icon}
+                <div key={icon._id} className={styles.badges}>
+                  {dynamicIcon(icon.icon, icon.module)}
                 </div>
               );
             })}
@@ -79,6 +80,7 @@ export function PortfolioCard({ image, title, date }: cardProps) {
       <PortfolioModal
         isOpen={isPortfolioModalOpen}
         onRequestClose={handleClosePortfolioModal}
+        id={id}
       />
     </>
   );

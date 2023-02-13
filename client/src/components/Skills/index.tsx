@@ -1,7 +1,4 @@
-// import { DiHtml5, DiReact } from "react-icons/di";
-
 import { useEffect, useState } from "react";
-import * as Di from "react-icons/di";
 import * as Si from "react-icons/si";
 
 import axios from "../../services/api";
@@ -38,21 +35,15 @@ export function Skills() {
   }
 
   function dynamicIcon(icon: string, module: string): JSX.Element {
-    if (module === "Di") {
-      const IconComponent = Di[icon as keyof typeof Di];
-      return <IconComponent />;
-    } else if (module === "Si") {
       const IconComponent = Si[icon as keyof typeof Si];
       return <IconComponent />;
-    }
-    return <Di.DiCode/>
   }
 
   return (
     <div className={styles.expertizeContainer}>
       <div className={styles.expertizeBox}>
         <div className={styles.boxTitle}>
-          <Di.DiReact />
+          <Si.SiReact />
           <h3>
             <span className={styles.maior}>Frontend Dev</span>
             <span>React, NextJS</span>

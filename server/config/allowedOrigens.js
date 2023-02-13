@@ -1,7 +1,7 @@
 const allowedOrigins = [
-  "https://www.ilgarcia.com/",
-  "https://ilgarcia.com/",
-  "https://web-portifolio-ilgarcia.vercel.app/",
+  "https://www.ilgarcia.com",
+  "https://ilgarcia.com",
+  "https://web-portifolio-ilgarcia.vercel.app",
   "http://localhost:3000",
 ];
 

@@ -20,7 +20,7 @@
   --slate-500: #c1c9c9;
   --slate-100: #e4eded;
 
-  --blue-900: #212121;
+  --blue-900: #252525;
 
   --purple-900: #13131f;
   --purple-200: #7942ed;
@@ -34,7 +34,6 @@
     font-size: 93.75%;
   }
 }
-
 
 @include cellphone {
   html {
@@ -53,11 +52,11 @@ body {
   scroll-behavior: smooth;
 }
 
-.blur{
+.blur {
   overflow: hidden;
   margin-right: 12px;
 
-  main{
+  main {
     filter: blur(5px) brightness(0.7);
     transition: var(--transition);
     pointer-events: none;
@@ -69,6 +68,9 @@ button {
   cursor: pointer;
   border: 0px;
   border-radius: 0px;
+  outline: none;
+  text-decoration: none;
+  line-height: 1;
 }
 
 a {

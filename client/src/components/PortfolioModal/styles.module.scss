@@ -8,8 +8,6 @@
       grid-template-columns: 3fr 2fr;
       align-items: center;
 
-      
-
       .modalText {
         align-items: flex-end;
         gap: 2rem;
@@ -26,7 +24,6 @@
           width: 150%;
           text-align: end;
         }
-
       }
     }
   }
@@ -105,9 +102,6 @@
   .modalContainer {
     margin: 1.5rem 0;
     .imageContainer {
-      height: fit-content;
-      width: fit-content;
-
       .image {
         width: 100%;
         height: auto;
@@ -141,11 +135,8 @@
         font-family: var(--fira-font);
       }
 
-
       .codes {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+        display: flex;
         gap: 1rem;
       }
 
@@ -154,17 +145,17 @@
         font-size: 1.8rem;
         display: flex;
         gap: 1rem;
+
       }
 
       .modalBox {
-        
         height: 9rem;
         background-color: var(--purple-900);
         border-radius: 0.5rem;
         display: flex;
         align-items: center;
         padding: 1rem;
-        
+
         box-shadow: 3px 3px 10px black;
         z-index: 2;
 
