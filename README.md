@@ -1,6 +1,6 @@
 # Portfolio
 
-img
+![Portfolio](https://user-images.githubusercontent.com/60369262/218871426-2d913db5-0c9d-4c22-8a38-d90ab25c13c5.png)
 
 You can access with the following [link.](https://www.ilgarcia.com/)
 
@@ -24,7 +24,7 @@ Alguns features existentes são:
 
 ---
 
-Technologies 🚀
+## Technologies 🚀
 
 This project uses lot of stuff as:
 
@@ -33,3 +33,4 @@ This project uses lot of stuff as:
 - Node
 - MongoDB
 - Sass
+- Create page with graphics with [gh-polyglot.](https://github.com/IonicaBizau/node-gh-polyglot) 
