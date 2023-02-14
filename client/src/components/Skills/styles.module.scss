@@ -3,6 +3,7 @@
 @include desktop {
   .expertizeContainer {
     .skillsContainer {
+      margin: 0 0.5rem;
       .skillsCard {
         width: 110px;
         padding: 1.5rem 0;
@@ -21,6 +22,7 @@
     align-items: center;
     gap: 1.5rem;
     .skillsContainer {
+      margin: 0 auto;
       .skillsCard {
         width: 90px;
         padding: 1.5rem 0;
@@ -111,7 +113,7 @@
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin: 0 auto;
+
 
     .skillsCard {
       display: flex;

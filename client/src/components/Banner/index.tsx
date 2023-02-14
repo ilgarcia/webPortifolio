@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion as m, Variants } from "framer-motion";
+import { FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
 
 import graphicsBanner from "./img/graphicsBanner.png";
 import purpleStar from "./img/purpleStar.png";
@@ -111,6 +112,40 @@ export function Banner() {
             curious, and perpetually working on improving my chops one design
             problem at a time.
           </m.p>
+          <m.div variants={itemVariants} className={styles.socialsLinks}>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/ilgarcia"
+                  aria-label="GitHub"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FiGithub />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ilgarcia/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FiLinkedin />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/resume.pdf"
+                  aria-label="Resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiFileText />
+                </a>
+              </li>
+            </ul>
+          </m.div>
         </div>
       </m.div>
     </section>

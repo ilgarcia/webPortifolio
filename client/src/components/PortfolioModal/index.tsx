@@ -50,7 +50,6 @@ export function PortfolioModal({
       .get(`projects/${id}`)
       .then((response) => {
         setProject(response.data);
-        console.log(response.data.tools);
       })
       .catch((error) => {
         console.error("Error fetching data", error);
