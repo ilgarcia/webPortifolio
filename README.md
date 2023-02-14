@@ -33,3 +33,4 @@ This project uses lot of stuff as:
 - Node
 - MongoDB
 - Sass
+- Create page with graphics with [gh-polyglot.](https://github.com/IonicaBizau/node-gh-polyglot) 
