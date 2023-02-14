@@ -28,6 +28,12 @@ export default function Head() {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <meta property="og:title" content="l.garcia" />
+      <meta
+        property="og:url"
+        content="https://www.ilgarcia.com"
+      />
+      <meta property="og:image" content="https://www.ilgarcia.com/_next/image?url=%2Fimg%2Fportfolio.png&w=640&q=75" />
     </>
   );
 }
