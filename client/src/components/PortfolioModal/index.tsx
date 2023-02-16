@@ -10,8 +10,6 @@ import axios from "../../services/api";
 
 import styles from "./styles.module.scss";
 
-import tela from "./img/tela.png";
-
 interface toolsProps {
   _id: string;
   title: string;
@@ -100,14 +98,14 @@ export function PortfolioModal({
           <ul className={styles.links}>
             {project.gitLink && (
               <li>
-                <a href={project.gitLink}>
+                <a href={project.gitLink} target="_blank">
                   <RiGithubFill />
                 </a>
               </li>
             )}
             {project.pageLink && (
               <li>
-                <a href={project.pageLink}>
+                <a href={project.pageLink} target="_blank">
                   <BiLinkExternal />
                 </a>
               </li>
