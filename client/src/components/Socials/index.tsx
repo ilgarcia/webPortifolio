@@ -98,10 +98,9 @@ export function Socials() {
         <h2>CONTACT ME</h2>
         <div className={styles.socialsLinks}>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            veritatis quam rerum sunt officia culpa, commodi excepturi. Enim
-            nisi quisquam natus omnis cumque minima at, esse dignissimos eaque
-            ipsum beatae.
+            I'm currently looking for a new opportunities, my
+            inbox is always open. Whether you have a question or just want to
+            say hi, I'll try my best to get back to you!
           </p>
           <ul>
             <li>
