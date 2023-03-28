@@ -27,7 +27,7 @@ export default function Page() {
           <h2 className={styles.numberedHeaders}>About Me</h2>
           <About />
         </section>
-        <section id="projects">
+        <section id="projects" className={styles.sectionProjects}>
           <h2 className={styles.numberedHeaders}>Some Things I've Built</h2>
           <Projects />
         </section>
