@@ -1,39 +1,176 @@
 @import "../../styles/mixins.scss";
 
 @include desktop {
-  .hamNavBar {
-    display: none;
-  }
-
   .headerContent {
     .logo {
       font-size: 1.7rem;
+    }
+
+    .hamStyled {
+      display: none;
+    }
+
+    .navList {
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          font-size: 0.9rem;
+
+          & + li {
+            margin-left: 2rem;
+          }
+        }
+      }
     }
   }
 }
 
 @include lessDesktop {
-  .horizontalList {
-    display: none;
-  }
-
   .headerContent {
     .logo {
       font-size: 1.5rem;
     }
-  }
-}
 
-.headerContainer {
-  height: 4rem;
-  backdrop-filter: blur(8px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  transition: all 0.6s ease-in-out;
-  box-shadow: 0 5px 30px -10px var(--black);
+    .hamStyled {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      margin-right: -15px;
+      padding: 15px;
+      border: 0px;
+      background-color: transparent;
+      color: inherit;
+      text-transform: none;
+      transition-timing-function: linear;
+      transition-duration: 0.15s;
+      transition-property: opacity, filter;
+
+      .hamBox {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 24px;
+
+        .hamBoxInner {
+          position: absolute;
+          top: 50%;
+          right: 0px;
+          width: 30px;
+          height: 2px;
+          border-radius: 4px;
+          background-color: var(--yellow-900);
+
+          &::before,
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: auto;
+            right: 0px;
+            width: 30px;
+            height: 2px;
+            border-radius: 4px;
+            background-color: var(--yellow-900);
+            transition-timing-function: ease;
+            transition-duration: 0.15s;
+            transition-property: transform;
+          }
+        }
+      }
+    }
+
+    .disabled {
+      .hamStyled {
+        .hamBox {
+          .hamBoxInner {
+            transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+              0s;
+            transform: rotate(0deg);
+
+            &::before {
+              width: 120%;
+              top: -10px;
+              transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+            }
+
+            &::after {
+              width: 80%;
+              bottom: -10px;
+              transform: rotate(0deg);
+              transition: bottom 0.1s ease-in 0.25s,
+                transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+          }
+        }
+      }
+
+      .navList {
+        transform: translateX(100vw);
+        visibility: hidden;
+      }
+    }
+
+    .enabled {
+      .hamStyled {
+        .hamBox {
+          .hamBoxInner {
+            transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1)
+              0.12s;
+            transform: rotate(225deg);
+
+            &::before {
+              width: 100%;
+              top: 0px;
+              opacity: 0;
+              transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+            }
+
+            &::after {
+              width: 100%;
+              bottom: 0px;
+              transform: rotate(-90deg);
+              transition: bottom 0.1s ease-out,
+                transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+            }
+          }
+        }
+      }
+
+      .navList {
+        transform: translateX(0vw);
+        visibility: visible;
+      }
+    }
+
+    .navList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      padding: 50px 10px;
+      width: min(70vw, 350px);
+      height: 100vh;
+      outline: 0px;
+      background-color: var(--purple-900);
+      box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+      font-size: 1.3rem;
+      z-index: 9;
+      transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      li {
+        & + li {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
 }
 
 .navbarHidden {
@@ -48,203 +185,61 @@
   border-bottom: 1px solid var(--yellow-900);
 }
 
-.headerContent {
-  max-width: 1024px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
+.headerContainer {
+  height: 4rem;
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0 5px 30px -10px var(--black);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .headerContent {
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
 
-  .logo {
-    font-weight: 700;
-
-    span:first-child {
-      color: var(--yellow-900);
-      margin: 0 0.1rem;
-    }
-    span:last-child {
-      color: var(--purple-200);
-      margin-left: 0.2rem;
-    }
-  }
-
-  .horizontalList {
-    ul {
-      display: flex;
-      align-items: center;
-
-      li {
-        font-size: 0.9rem;
-
-        & + li {
-          margin-left: 2rem;
-        }
-      }
-    }
-  }
-
-  .disabled {
-    .hamStyled {
-      .hamBox {
-        .hamBoxInner {
-          transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
-          transform: rotate(0deg);
-
-          &::before {
-            width: 120%;
-            top: -10px;
-            transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
-          }
-
-          &::after {
-            width: 80%;
-            bottom: -10px;
-            transform: rotate(0deg);
-            transition: bottom 0.1s ease-in 0.25s,
-              transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          }
-        }
-      }
-    }
-
-    .sideBar {
-      transform: translateX(100vw);
-      visibility: hidden;
-    }
-  }
-
-  .enabled {
-    .hamStyled {
-      .hamBox {
-        .hamBoxInner {
-          transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-          transform: rotate(225deg);
-
-          &::before {
-            width: 100%;
-            top: 0px;
-            opacity: 0;
-            transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
-          }
-
-          &::after {
-            width: 100%;
-            bottom: 0px;
-            transform: rotate(-90deg);
-            transition: bottom 0.1s ease-out,
-              transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-          }
-        }
-      }
-    }
-
-    .sideBar {
-      transform: translateX(0vw);
-      visibility: visible;
-    }
-  }
-
-  .hamStyled {
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 10;
-    margin-right: -15px;
-    padding: 15px;
-    border: 0px;
-    background-color: transparent;
-    color: inherit;
-    text-transform: none;
-    transition-timing-function: linear;
-    transition-duration: 0.15s;
-    transition-property: opacity, filter;
+    justify-content: space-between;
 
-    .hamBox {
-      display: inline-block;
-      position: relative;
-      width: 30px;
-      height: 24px;
+    .logo {
+      font-weight: 700;
 
-      .hamBoxInner {
-        position: absolute;
-        top: 50%;
-        right: 0px;
-        width: 30px;
-        height: 2px;
-        border-radius: 4px;
-        background-color: var(--yellow-900);
+      span:first-child {
+        color: var(--yellow-900);
+        margin: 0 0.1rem;
+      }
+      span:last-child {
+        color: var(--purple-200);
+        margin-left: 0.2rem;
+      }
+    }
 
-        &::before,
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          left: auto;
-          right: 0px;
-          width: 30px;
-          height: 2px;
-          border-radius: 4px;
-          background-color: var(--yellow-900);
-          transition-timing-function: ease;
-          transition-duration: 0.15s;
-          transition-property: transform;
+    .navList {
+      ul {
+        counter-reset: item;
+
+        li {
+          a::before {
+            counter-increment: item;
+            content: "0" counter(item) ".";
+            color: var(--yellow-900);
+            margin-right: 0.5rem;
+            text-align: right;
+            font-family: var(--fira-font);
+          }
+
+          transition: color 0.5s ease;
+
+          &:hover {
+            color: var(--yellow-900);
+          }
         }
       }
     }
-  }
-
-  .asideList {
-    font-size: 1.3rem;
-
-    li {
-      & + li {
-        margin-top: 1rem;
-      }
-    }
-  }
-
-  .navList {
-    ul {
-      counter-reset: item;
-
-      li {
-        a::before {
-          counter-increment: item;
-          content: "0" counter(item) ".";
-          color: var(--yellow-900);
-          margin-right: 0.5rem;
-          text-align: right;
-          font-family: var(--fira-font);
-        }
-
-        transition: color 0.5s ease;
-
-        &:hover {
-          color: var(--yellow-900);
-        }
-      }
-    }
-  }
-
-  .sideBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 50px 10px;
-    width: min(70vw, 350px);
-    height: 100vh;
-    outline: 0px;
-    background-color: var(--purple-900);
-    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
-    z-index: 9;
-    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }

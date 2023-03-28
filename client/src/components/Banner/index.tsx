@@ -103,7 +103,7 @@ export function Banner() {
         <div className={styles.bannerText}>
           <m.h1 variants={itemVariants}>Hi There! I'm Igor</m.h1>
           <m.p variants={itemVariants}>
-            A <span>Frontend developer</span> who writes clean, elegant and
+            A <span>Fullstack developer</span> who writes clean, elegant and
             efficient code.
           </m.p>
           <m.p variants={itemVariants}>
