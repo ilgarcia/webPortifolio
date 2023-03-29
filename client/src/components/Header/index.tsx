@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useContext, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion as m, Variants } from "framer-motion";
 import { ToggleContext } from "../../context/ToggleContext";
 
@@ -27,15 +28,6 @@ const itemVariants: Variants = {
   },
 };
 
-const hamNavVariants: Variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
-
 export function Header() {
   const { modal } = useContext(ToggleContext);
 
@@ -45,6 +37,10 @@ export function Header() {
   const [enabled, setEnabled] = useState(false);
 
   const ref = useRef<any>(null);
+
+  const pathname = usePathname();
+
+  const items = ["about", "projects", "skills", "experience", "contact"];
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -97,8 +93,6 @@ export function Header() {
     }
   }
 
-  const items = ["about", "projects", "skills", "experience", "contact"];
-
   return (
     <header
       className={`${styles.headerContainer}  ${
@@ -125,22 +119,37 @@ export function Header() {
           </button>
 
           <div className={`${styles.navList}`}>
-            <ul>
-              {items.map((item) => {
-                return (
-                  <m.li
-                    key={item}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <a href={item}>
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </a>
-                  </m.li>
-                );
-              })}
-            </ul>
+            {!String(pathname).startsWith("/blog") ? (
+              <div>
+                <ul>
+                  {items.map((item) => {
+                    return (
+                      <m.li
+                        key={item}
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <a href={item}>
+                          {item.charAt(0).toUpperCase() + item.slice(1)}
+                        </a>
+                      </m.li>
+                    );
+                  })}
+                </ul>
+                <m.a
+                  href="/blog"
+                  className={styles.pageLink}
+                  variants={itemVariants}
+                >
+                  Blog
+                </m.a>
+              </div>
+            ) : (
+              <m.a href="/" className={styles.pageLink} variants={itemVariants}>
+                Portfolio
+              </m.a>
+            )}
           </div>
         </section>
       </m.nav>
