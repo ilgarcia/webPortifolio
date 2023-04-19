@@ -31,12 +31,12 @@ export default async function Page({ params: { slug } }: Props) {
       <section>
         <div className={styles.postHeader}>
           <div className={styles.postHeaderContent}>
-            <Image
+            {/* <Image
               className={styles.imageCover}
               src={urlFor(post.mainImage).url()}
               alt={post.author.name}
               fill
-            />
+            /> */}
           </div>
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
@@ -51,13 +51,13 @@ export default async function Page({ params: { slug } }: Props) {
                 </p>
               </div>
               <div className={styles.authorContainer}>
-                <Image
+                {/* <Image
                   className={styles.authorImage}
                   src={urlFor(post.author.image).url()}
                   alt={post.author.name}
                   height={40}
                   width={40}
-                />
+                /> */}
                 <div>
                   <h3>{post.author.name}</h3>
                   <div>{/* TODO Author BIO */}</div>
