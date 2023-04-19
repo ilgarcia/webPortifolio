@@ -41,7 +41,7 @@ async function Post({ params: { slug } }: Props) {
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
-                {/* <h1>{post.title}</h1> */}
+                <h1>{post.title}</h1>
                 <h2>{slug}</h2>
                 {/* <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
