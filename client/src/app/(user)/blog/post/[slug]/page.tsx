@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
@@ -16,7 +14,7 @@ type Props = {
   };
 };
 
-export default async function Page({ params: { slug } }: Props) {
+async function Post({ params: { slug } }: Props) {
   const query = groq`
   *[_type=='post' && slug.current == $slug][0]
   {
@@ -26,31 +24,32 @@ export default async function Page({ params: { slug } }: Props) {
   }
   `;
 
-  const post: Post = await client.fetch(query, { slug: slug });
+  const post: Post = await client.fetch(query, { slug });
 
   return (
     <article className={styles.article}>
       <section>
         <div className={styles.postHeader}>
           <div className={styles.postHeaderContent}>
-            <Image
+            {/* <Image
               className={styles.imageCover}
               src={urlFor(post.mainImage).url()}
               alt={post.author.name}
               fill
-            />
+            /> */}
           </div>
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
                 <h1>{post.title}</h1>
-                <p>
+                <h2>{slug}</h2>
+                {/* <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
                   })}
-                </p>
+                </p> */}
               </div>
               <div className={styles.authorContainer}>
                 {/* <Image
@@ -83,3 +82,5 @@ export default async function Page({ params: { slug } }: Props) {
     </article>
   );
 }
+
+export default Post;
