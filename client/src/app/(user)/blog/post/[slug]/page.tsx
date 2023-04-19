@@ -26,11 +26,12 @@ const query = groq`
 // export default async function Page({ params: { slug } }: Props) {
 
 export default async function Page({ params: { slug } }: Props) {
-  // console.log(slug);
 
+  console.log("teste 1");
+  console.log(slug);
   const post: Post = await client.fetch(query, { slug });
-
   console.log(post);
+  console.log("teste 1");
 
   return (
     <article className={styles.article}>
