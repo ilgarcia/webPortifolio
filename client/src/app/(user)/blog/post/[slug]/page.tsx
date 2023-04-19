@@ -8,23 +8,23 @@ import urlFor from "../../../../../../lib/urlFor";
 
 import styles from "./styles.module.scss";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+// type Props = {
+//   params: {
+//     slug: string;
+//   };
+// };
 
-export default async function Page({ params: { slug } }: Props) {
-  const query = groq`
-  *[_type=="post" && slug.current == $slug][0] 
-  {
-    ...,
-    author->,
-    categories[]->
-  }
-  `;
+// export default async function Page({ params: { slug } }: Props) {
+//   const query = groq`
+//   *[_type=="post" && slug.current == $slug][0] 
+//   {
+//     ...,
+//     author->,
+//     categories[]->
+//   }
+//   `;
 
-  const post: Post = await client.fetch(query, { slug });
+//   const post: Post = await client.fetch(query, { slug });
 
   return (
     <article className={styles.article}>
@@ -41,14 +41,14 @@ export default async function Page({ params: { slug } }: Props) {
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
-                <h1>{post.title}</h1>
+                {/* <h1>{post.title}</h1>
                 <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
                   })}
-                </p>
+                </p> */}
               </div>
               <div className={styles.authorContainer}>
                 {/* <Image
@@ -59,24 +59,24 @@ export default async function Page({ params: { slug } }: Props) {
                   width={40}
                 /> */}
                 <div>
-                  <h3>{post.author.name}</h3>
+                  {/* <h3>{post.author.name}</h3> */}
                   <div>{/* TODO Author BIO */}</div>
                 </div>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h2 className={styles.postDescription}>{post.description}</h2>
               <div className={styles.categoryContainer}>
                 {post.categories.map((category) => (
                   <p key={category._id} className={styles.category}>{category.title}</p>
                 ))}
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
       </section>
       <section className={styles.textBody}>
-        <PortableText value={post.body} components={RichTextComponents} />
+        {/* <PortableText value={post.body} components={RichTextComponents} /> */}
       </section>
     </article>
   );
