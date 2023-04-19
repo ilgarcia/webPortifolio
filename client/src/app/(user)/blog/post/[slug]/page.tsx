@@ -23,15 +23,8 @@ const query = groq`
   }
   `;
 
-// export default async function Page({ params: { slug } }: Props) {
-
 export default async function Page({ params: { slug } }: Props) {
-
-  console.log("teste 1");
-  console.log(slug);
   const post: Post = await client.fetch(query, { slug });
-  console.log(post);
-  console.log("teste 1");
 
   return (
     <article className={styles.article}>
@@ -48,8 +41,8 @@ export default async function Page({ params: { slug } }: Props) {
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
-                {/* <h1>{post.title}</h1>
-                <p>
+                <h1>{post.title}</h1>
+                {/* <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
