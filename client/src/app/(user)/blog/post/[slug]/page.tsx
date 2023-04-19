@@ -8,25 +8,29 @@ import urlFor from "../../../../../../lib/urlFor";
 
 import styles from "./styles.module.scss";
 
-// type Props = {
-//   params: {
-//     slug: string;
-//   };
-// };
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+const query = groq`
+  *[_type=="post" && slug.current == $slug][0]
+  {
+    ...,
+    author->,
+    categories[]->
+  }
+  `;
 
 // export default async function Page({ params: { slug } }: Props) {
-//   const query = groq`
-//   *[_type=="post" && slug.current == $slug][0] 
-//   {
-//     ...,
-//     author->,
-//     categories[]->
-//   }
-//   `;
 
-//   const post: Post = await client.fetch(query, { slug });
+export default async function Page({ params: { slug } }: Props) {
+  // console.log(slug);
 
-export default async function Page() {
+  const post: Post = await client.fetch(query, { slug });
+
+  console.log(post);
 
   return (
     <article className={styles.article}>
