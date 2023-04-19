@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
@@ -16,7 +18,7 @@ type Props = {
 
 export default async function Page({ params: { slug } }: Props) {
   const query = groq`
-  *[_type=='post' && slug.current == "example-1"][0]
+  *[_type=='post' && slug.current == $slug][0]
   {
     ...,
     author->,
