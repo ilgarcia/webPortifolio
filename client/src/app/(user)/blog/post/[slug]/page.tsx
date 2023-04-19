@@ -24,7 +24,7 @@ export default async function Page({ params: { slug } }: Props) {
   }
   `;
 
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(query, { slug: slug });
 
   return (
     <article className={styles.article}>
