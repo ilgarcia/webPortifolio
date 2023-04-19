@@ -26,6 +26,8 @@ import styles from "./styles.module.scss";
 
 //   const post: Post = await client.fetch(query, { slug });
 
+export default async function Page() {
+
   return (
     <article className={styles.article}>
       <section>
