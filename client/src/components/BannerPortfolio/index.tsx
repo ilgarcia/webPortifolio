@@ -8,6 +8,7 @@ import graphicsBanner from "./img/graphicsBanner.png";
 import purpleStar from "./img/purpleStar.png";
 import whiteStar from "./img/whiteStar.png";
 import lineStar from "./img/lineStar.png";
+
 import styles from "./styles.module.scss";
 
 const containerVariants: Variants = {
@@ -39,7 +40,7 @@ const itemVariants: Variants = {
   },
 };
 
-export function Banner() {
+export function BannerPortfolio() {
   return (
     <section className={styles.banner}>
       <Image
@@ -103,7 +104,7 @@ export function Banner() {
         <div className={styles.bannerText}>
           <m.h1 variants={itemVariants}>Hi There! I'm Igor</m.h1>
           <m.p variants={itemVariants}>
-            A <span>Frontend developer</span> who writes clean, elegant and
+            A <span>Fullstack developer</span> who writes clean, elegant and
             efficient code.
           </m.p>
           <m.p variants={itemVariants}>

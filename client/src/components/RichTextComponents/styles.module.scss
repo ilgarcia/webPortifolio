@@ -1,0 +1,69 @@
+@import "../../styles/mixins.scss";
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin: 40px auto;
+
+  .image {
+    object-fit: contain;
+  }
+}
+
+.list {
+  margin-left: 40px;
+  padding: 20px 0;
+
+  li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--yellow-900);
+  }
+}
+
+.titleOne {
+  font-weight: 700;
+  padding: 40px 0;
+  font-size: 3rem;
+}
+
+.titleTwo {
+  font-weight: 700;
+  padding: 40px 0;
+  font-size: 2.5rem;
+}
+
+.titleThree {
+  font-weight: 700;
+  padding: 40px 0;
+  font-size: 2rem;
+}
+
+.titleFour {
+  font-weight: 700;
+  padding: 40px 0;
+  font-size: 1.5rem;
+}
+
+.blockquote {
+  border-left: 4px solid var(--yellow-900);
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.link {
+  text-decoration: underline var(--yellow-900);
+
+  &:hover{
+    text-decoration: underline var(--purple-200);
+  }
+}
+

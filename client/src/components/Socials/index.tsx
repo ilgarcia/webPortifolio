@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion as m, Variants } from "framer-motion";
+import { useRef } from "react";
+import { motion as m, Variants, useInView } from "framer-motion";
 
 import { FiGithub, FiLinkedin, FiFileText } from "react-icons/fi";
 
@@ -18,30 +19,24 @@ const itemVariants: Variants = {
   },
 };
 
-const cardVariants: Variants = {
-  offscreen: {
-    opacity: 0,
-    y: -50,
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 1.2,
-    },
-  },
-};
-
 export function Socials() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <div>
+    <section ref={ref}>
       <m.div
         className={styles.socials}
         initial="hidden"
         animate="visible"
-        variants={itemVariants}
+        variants={{
+          hidden: { opacity: 0, y: 300 },
+          visible: {
+            opacity: !isInView ? 1 : 0,
+            y: !isInView ? 0 : 300,
+            transition: { duration: 1, delay: 0.2 },
+          },
+        }}
       >
         <ul className={styles.socialsList}>
           <li>
@@ -59,6 +54,7 @@ export function Socials() {
               aria-label="GitHub"
               target="_blank"
               rel="noreferrer"
+              title="GitHub"
             >
               <FiGithub />
             </a>
@@ -70,6 +66,7 @@ export function Socials() {
               aria-label="LinkedIn"
               target="_blank"
               rel="noreferrer"
+              title="LinkedIn"
             >
               <FiLinkedin />
             </a>
@@ -81,26 +78,22 @@ export function Socials() {
               aria-label="Resume"
               target="_blank"
               rel="noopener noreferrer"
+              title="Curriculum"
             >
               <FiFileText />
             </a>
           </li>
         </ul>
       </m.div>
-      <m.div
-        className={styles.containerContact}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={cardVariants}
-      >
+
+      <section className={styles.containerContact}>
         <Image src={contact} alt="Contact me" className={styles.contactPic} />
         <h2>CONTACT ME</h2>
         <div className={styles.socialsLinks}>
           <p>
-            I'm currently looking for a new opportunities, my
-            inbox is always open. Whether you have a question or just want to
-            say hi, I'll try my best to get back to you!
+            I'm currently looking for a new opportunities, my inbox is always
+            open. Whether you have a question or just want to say hi, I'll try
+            my best to get back to you!
           </p>
           <ul>
             <li>
@@ -109,6 +102,7 @@ export function Socials() {
                 aria-label="GitHub"
                 target="_blank"
                 rel="noreferrer"
+                title="GitHub"
               >
                 <FiGithub />
               </a>
@@ -119,6 +113,7 @@ export function Socials() {
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noreferrer"
+                title="LinkedIn"
               >
                 <FiLinkedin />
               </a>
@@ -129,6 +124,7 @@ export function Socials() {
                 aria-label="Resume"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Curriculum"
               >
                 <FiFileText />
               </a>
@@ -143,7 +139,8 @@ export function Socials() {
             </a>
           </p>
         </div>
-      </m.div>
-    </div>
+      </section>
+    </section>
   );
 }
+
