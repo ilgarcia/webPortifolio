@@ -36,48 +36,47 @@ export default async function Page({ params: { slug } }: Props) {
       <section>
         <div className={styles.postHeader}>
           <div className={styles.postHeaderContent}>
-            {/* <Image
+            <Image
               className={styles.imageCover}
               src={urlFor(post.mainImage).url()}
               alt={post.author.name}
               fill
-            /> */}
+            />
           </div>
           <section className={styles.postHeaderBox}>
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
                 <h1>{post.title}</h1>
-                {/* <h2>{slug}</h2> */}
-                {/* <p>
+                <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
                   })}
-                </p> */}
+                </p>
               </div>
               <div className={styles.authorContainer}>
-                {/* <Image
+                <Image
                   className={styles.authorImage}
                   src={urlFor(post.author.image).url()}
                   alt={post.author.name}
                   height={40}
                   width={40}
-                /> */}
+                />
                 <div>
-                  {/* <h3>{post.author.name}</h3> */}
+                  <h3>{post.author.name}</h3>
                   <div>{/* TODO Author BIO */}</div>
                 </div>
               </div>
             </div>
-            {/* <div>
+            <div>
               <h2 className={styles.postDescription}>{post.description}</h2>
               <div className={styles.categoryContainer}>
                 {post.categories.map((category) => (
                   <p key={category._id} className={styles.category}>{category.title}</p>
                 ))}
               </div>
-            </div> */}
+            </div>
           </section>
         </div>
       </section>
