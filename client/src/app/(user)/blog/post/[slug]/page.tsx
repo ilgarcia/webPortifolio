@@ -14,7 +14,8 @@ type Props = {
   };
 };
 
-async function Post({ params: { slug } }: Props) {
+export default async function Page({ params: { slug } }: Props) {
+
   const query = groq`
   *[_type=='post' && slug.current == $slug][0]
   {
@@ -24,7 +25,11 @@ async function Post({ params: { slug } }: Props) {
   }
   `;
 
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(query, {slug});
+
+  if (!post) {
+    return null;
+  }
 
   return (
     <article className={styles.article}>
@@ -42,7 +47,7 @@ async function Post({ params: { slug } }: Props) {
             <div className={styles.postHeaderInfo}>
               <div className={styles.postHeaderTitle}>
                 <h1>{post.title}</h1>
-                <h2>{slug}</h2>
+                {/* <h2>{slug}</h2> */}
                 {/* <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
@@ -82,5 +87,3 @@ async function Post({ params: { slug } }: Props) {
     </article>
   );
 }
-
-export default Post;
