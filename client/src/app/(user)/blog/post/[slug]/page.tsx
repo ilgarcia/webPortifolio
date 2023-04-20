@@ -81,7 +81,7 @@ export default async function Page({ params: { slug } }: Props) {
         </div>
       </section>
       <section className={styles.textBody}>
-        {/* <PortableText value={post.body} components={RichTextComponents} /> */}
+        <PortableText value={post.body} components={RichTextComponents} />
       </section>
     </article>
   );
