@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
+import { HiArrowCircleLeft } from "react-icons/hi";
 
 import { client } from "../../../../../../lib/sanity.client";
 import { RichTextComponents } from "../../../../../components/RichTextComponents";
 import urlFor from "../../../../../../lib/urlFor";
 
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -15,7 +17,6 @@ type Props = {
 };
 
 export default async function Page({ params: { slug } }: Props) {
-
   const query = groq`
   *[_type=='post' && slug.current == $slug][0]
   {
@@ -25,7 +26,7 @@ export default async function Page({ params: { slug } }: Props) {
   }
   `;
 
-  const post: Post = await client.fetch(query, {slug});
+  const post: Post = await client.fetch(query, { slug });
 
   if (!post) {
     return null;
@@ -73,7 +74,9 @@ export default async function Page({ params: { slug } }: Props) {
               <h2 className={styles.postDescription}>{post.description}</h2>
               <div className={styles.categoryContainer}>
                 {post.categories.map((category) => (
-                  <p key={category._id} className={styles.category}>{category.title}</p>
+                  <p key={category._id} className={styles.category}>
+                    {category.title}
+                  </p>
                 ))}
               </div>
             </div>
@@ -81,7 +84,15 @@ export default async function Page({ params: { slug } }: Props) {
         </div>
       </section>
       <section className={styles.textBody}>
+        <Link href="/blog" className={styles.seeMore}>
+          <HiArrowCircleLeft />
+          See more posts
+        </Link>
         <PortableText value={post.body} components={RichTextComponents} />
+        <Link href="/blog" className={styles.seeMore}>
+          <HiArrowCircleLeft />
+          See more posts
+        </Link>
       </section>
     </article>
   );
