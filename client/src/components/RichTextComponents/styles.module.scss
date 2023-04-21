@@ -61,9 +61,12 @@
 
 .link {
   text-decoration: underline var(--yellow-900);
+  font-weight: 700;
+  text-decoration-thickness: 3px;
 
   &:hover{
     text-decoration: underline var(--purple-200);
+    text-decoration-thickness: 3px;
   }
 }
 

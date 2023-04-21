@@ -111,15 +111,15 @@ export function Header() {
           </a>
         </m.div>
 
-        <section className={`${enabled ? styles.enabled : styles.disabled}`}>
-          <button className={styles.hamStyled} onClick={handleNavBar}>
-            <div className={styles.hamBox}>
-              <div className={styles.hamBoxInner}></div>
-            </div>
-          </button>
+        {!String(pathname).startsWith("/blog") ? (
+          <section className={`${enabled ? styles.enabled : styles.disabled}`}>
+            <button className={styles.hamStyled} onClick={handleNavBar}>
+              <div className={styles.hamBox}>
+                <div className={styles.hamBoxInner}></div>
+              </div>
+            </button>
 
-          <div className={`${styles.navList}`}>
-            {!String(pathname).startsWith("/blog") ? (
+            <div className={`${styles.navList}`}>
               <div>
                 <ul>
                   {items.map((item) => {
@@ -145,13 +145,13 @@ export function Header() {
                   Blog
                 </m.a>
               </div>
-            ) : (
-              <m.a href="/" className={styles.pageLink} variants={itemVariants}>
-                Portfolio
-              </m.a>
-            )}
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : (
+          <m.a href="/" className={styles.buttonLink} variants={itemVariants}>
+            Portfolio
+          </m.a>
+        )}
       </m.nav>
     </header>
   );

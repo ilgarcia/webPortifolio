@@ -27,7 +27,7 @@
     .postHeaderBox {
       padding: 20px 40px;
       width: 100%;
-      background-color: var(--yellow-900);
+      background-color: var(--purple-200);
 
       .postHeaderInfo {
         display: flex;
@@ -68,7 +68,7 @@
 
         .category {
           text-align: center;
-          background-color: var(--purple-200);
+          background-color: var(--yellow-900);
           padding: 5px 20px;
           font-weight: 700;
           font-size: 0.9rem;
@@ -83,10 +83,12 @@
     max-width: 1000px;
     margin: 1rem auto 0;
     padding: 0 1rem;
+    color: var(--slate-100);
 
     p {
       margin: 1rem 0;
-      line-height: 1.4rem;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
     }
   }
 }

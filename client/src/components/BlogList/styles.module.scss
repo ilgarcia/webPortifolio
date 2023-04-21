@@ -4,8 +4,9 @@
   max-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
   margin: 4rem auto 6rem;
+  padding: 1.5rem;
 
   .postGroup {
     display: flex;
