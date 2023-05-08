@@ -9,11 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/runtime": "^7.21.5",
+    "@codemirror/lint": "^6.2.1",
+    "@codemirror/state": "6.0.0",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@lezer/common": "1.0.0",
     "@portabletext/react": "^3.0.0",
+    "@sanity/icons": "2.0.0",
     "@sanity/image-url": "^1.0.2",
+    "@sanity/types": "3.0.0",
+    "@sanity/ui": "1.0.0",
     "@sanity/vision": "^3.10.0",
     "axios": "^1.4.0",
+    "browserslist": "^4.21.5",
+    "codemirror": "^6.0.1",
     "date-fns": "^2.30.0",
+    "eslint": "7.23.0",
     "eslint-config-next": "^13.4.1",
     "framer-motion": "^10.12.8",
     "next": "^13.4.1",
@@ -22,12 +33,12 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+    "react-is": "18",
     "react-modal": "^3.16.1",
     "react-portable-text": "^0.6.0",
     "sanity": "^3.10.0",
     "sass": "^1.62.1",
-    "styled-components": "^6.0.0-rc.1",
-    "supports-color": "^9.3.1"
+    "styled-components": "5.2"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
@@ -35,7 +46,7 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "18.2.4",
     "@types/react-modal": "^3.16.0",
-    "@types/styled-components": "^5.1.26",
+    "@types/styled-components": "5.1.0",
     "typescript": "5.0.4"
   }
 }

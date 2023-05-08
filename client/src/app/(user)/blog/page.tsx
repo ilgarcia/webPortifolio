@@ -1,5 +1,5 @@
 
-// import { draftMode } from "next/headers";
+import { draftMode } from "next/headers";
 
 import { groq } from "next-sanity";
 
@@ -21,10 +21,9 @@ const query = groq`
 `;
 
 export default async function Page() {
+  const { isEnabled } = draftMode();
 
-// Draft mode is not working fix it in the next release
-
-  if (false) {
+  if (isEnabled) {
     return (
       <section>
         <BannerBlog />
