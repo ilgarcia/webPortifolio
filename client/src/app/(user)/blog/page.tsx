@@ -1,4 +1,6 @@
-import { previewData } from "next/headers";
+
+import { draftMode } from "next/headers";
+
 import { groq } from "next-sanity";
 
 import { client } from "../../../../lib/sanity.client";
@@ -19,7 +21,9 @@ const query = groq`
 `;
 
 export default async function Page() {
-  if (previewData()) {
+  const { isEnabled } = draftMode();
+
+  if (isEnabled) {
     return (
       <section>
         <BannerBlog />
