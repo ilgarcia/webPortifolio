@@ -1,10 +1,5 @@
 @import "mixins.scss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root {
   --white: #fff;
@@ -31,27 +26,9 @@
   --brown-500: #40341e;
 }
 
-@include tablet {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@include cellphone {
-  html {
-    font-size: 87.5%;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
 
 body {
-  background: var(--purple-900);
-  color: var(--white);
   counter-reset: section;
-  scroll-behavior: smooth;
 }
 
 .blur {
@@ -66,37 +43,4 @@ body {
   }
 }
 
-button {
-  cursor: pointer;
-  border: 0px;
-  border-radius: 0px;
-  outline: none;
-  text-decoration: none;
-  line-height: 1;
-}
 
-a {
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-// Scrollbar
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--slate-900);
-  border: 2px solid var(--purple-900);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--purple-900);
-}

@@ -1,3 +1,6 @@
+import "./global.css";
+
+// delete
 import "../styles/globals.scss";
 
 export default function RootLayout({

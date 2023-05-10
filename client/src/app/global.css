@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-sm md:text-base scroll-smooth;
+  }
+
+  body {
+    @apply text-white bg-theme-dark;
+  }
+
+  button {
+    @apply cursor-pointer outline-none no-underline;
+  }
+
+  a {
+    @apply outline-none text-inherit;
+  }
+
+  ol {
+    @apply list-none;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  ul li {
+    @apply relative mb-1 pl-5 before:content-['▹'] before:absolute before:left-0 before:text-theme-orange;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 border-solid border-theme-dark rounded-full;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-theme-dark;
+  }
+}
+
+@layer components {
+  .markup {
+    @apply block relative after:absolute after:bottom-[13.5%] after:-z-10 after:h-2 after:w-[104%] after:-left-0.5 after:-rotate-1;
+  }
+
+  .mk-purple {
+    @apply after:bg-theme-purple;
+  }
+
+  .mk-orange {
+    @apply after:bg-theme-orange;
+  }
+
+  .title-h1 {
+    @apply font-semibold text-4xl my-10;
+  }
+
+  .title-h2 {
+    @apply font-semibold text-3xl my-10;
+  }
+
+  .title-h3 {
+    @apply font-semibold text-2xl my-10;
+  }
+
+  .title-h4 {
+    @apply font-semibold text-xl my-10;
+  }
+
+  .title-tab {
+    @apply font-semibold text-xl;
+  }
+}

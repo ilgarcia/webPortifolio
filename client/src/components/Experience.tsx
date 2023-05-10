@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 
-import styles from "./styles.module.scss";
-
 export function Experience() {
   const [openTab, setOpenTab] = useState(1);
+
   return (
-    <div className={styles.experienceContainer}>
-      <div className={styles.experienceTabs}>
+    <div className="lg:flex lg:max-w-4xl">
+      <div className="flex mb-6 overflow-x-auto lg:block lg:mb-0 ">
         <button
-          className={`${styles.tabs} ${openTab === 1 && styles.active}`}
+          className={`"flex whitespace-nowrap max-w-[220px] w-full px-2 py-3 border-solid border-gray-600 border-b-2 lg:border-l-2 lg:border-b-0 hover:bg-opacity-10 hover:border-theme-orange hover:bg-theme-orange " ${
+            openTab === 1 &&
+            "text-theme-orange border-theme-orange bg-theme-orange bg-opacity-10"
+          }`}
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(1);
@@ -19,7 +21,10 @@ export function Experience() {
           Conta-Mais
         </button>
         <button
-          className={`${styles.tabs} ${openTab === 2 && styles.active}`}
+          className={`"flex whitespace-nowrap max-w-[220px] w-full px-2 py-3 border-solid border-gray-600 border-b-2 lg:border-l-2 lg:border-b-0 hover:bg-opacity-10 hover:border-theme-orange hover:bg-theme-orange " ${
+            openTab === 2 &&
+            "text-theme-orange border-theme-orange bg-theme-orange bg-opacity-10"
+          }`}
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(2);
@@ -28,7 +33,10 @@ export function Experience() {
           Itaú Unibanco
         </button>
         <button
-          className={`${styles.tabs} ${openTab === 3 && styles.active}`}
+          className={`"flex whitespace-nowrap max-w-[220px] w-full px-2 py-3 border-solid border-gray-600 border-b-2 lg:border-l-2 lg:border-b-0 hover:bg-opacity-10 hover:border-theme-orange hover:bg-theme-orange " ${
+            openTab === 3 &&
+            "text-theme-orange border-theme-orange bg-theme-orange bg-opacity-10"
+          }`}
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(3);
@@ -37,10 +45,16 @@ export function Experience() {
           Itaú Unibanco
         </button>
       </div>
-      <div className={styles.experienceInfo}>
-        <div className={`${styles.info} ${openTab !== 1 && styles.hidden}`}>
-          <h3>Conta-Mais</h3>
-          <p>Managing Partner - Aug 2018 - Jan 2022</p>
+      <div className="ml-5">
+        <div
+          className={`relative w-full h-auto py-3 px-1 ${
+            openTab !== 1 && "hidden"
+          }`}
+        >
+          <h3 className="title-tab">Conta-Mais</h3>
+          <p className="mb-6 text-slate-300">
+            Managing Partner - Aug 2018 - Jan 2022
+          </p>
           <div>
             <ul>
               <li>
@@ -58,9 +72,13 @@ export function Experience() {
             </ul>
           </div>
         </div>
-        <div className={`${styles.info} ${openTab !== 2 && styles.hidden}`}>
-          <h3>Itaú Unibanco</h3>
-          <p>Analyst - Apr 2016 - Aug 2018</p>
+        <div
+          className={`relative w-full h-auto py-3 px-1 ${
+            openTab !== 2 && "hidden"
+          }`}
+        >
+          <h3 className="title-tab">Itaú Unibanco</h3>
+          <p className="mb-6 text-slate-300">Analyst - Apr 2016 - Aug 2018</p>
           <div>
             <ul>
               <li>Creation of tools and process automation.</li>
@@ -71,9 +89,13 @@ export function Experience() {
             </ul>
           </div>
         </div>
-        <div className={`${styles.info} ${openTab !== 3 && styles.hidden}`}>
-          <h3>Itaú Unibanco</h3>
-          <p>Intern - Jun 2014 - Apr 2016</p>
+        <div
+          className={`relative w-full h-auto py-3 px-1 ${
+            openTab !== 3 && "hidden"
+          }`}
+        >
+          <h3 className="title-tab">Itaú Unibanco</h3>
+          <p className="mb-6 text-slate-300">Intern - Jun 2014 - Apr 2016</p>
           <div>
             <ul>
               <li>
