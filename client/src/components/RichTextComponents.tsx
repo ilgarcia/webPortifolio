@@ -18,6 +18,7 @@ export const RichTextComponents = {
         </div>
       );
     },
+    // code:({ children }: any)=><pre><code>{children}</code></pre>
   },
   list: {
     bullet: ({ children }: any) => <ul>{children}</ul>,
@@ -32,7 +33,7 @@ export const RichTextComponents = {
       <blockquote className="my-5 p-5 border-l-4 border-solid border-theme-orange">{children}</blockquote>
     ),
   },
-  marks: {
+  marks: { 
     link: ({ children, value }: any) => {
       // const rel = !value.href.starsWith("/")
       //   ? "noreferrer noopener"

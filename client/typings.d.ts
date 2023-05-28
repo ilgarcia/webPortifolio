@@ -50,12 +50,12 @@ interface Span {
   _key: string;
   _type: "span";
   marks: string[];
-  text:string;
+  text: string;
 }
 
 interface Category extends Base {
-description: string;
-title: string;
+  description: string;
+  title: string;
 }
 
 interface MainImage {
@@ -63,7 +63,33 @@ interface MainImage {
   asset: Reference;
 }
 
-interface Title{
+interface Title {
   _type: "string";
   current: string;
+}
+
+interface Portfolio extends Base {
+  title: string;
+  description: string;
+  mainImage: Image;
+  skill: Skill[];
+  projectType: ProjectType;
+  tools: Tool[];
+  github?: string;
+  blog?: string;
+  pageLink?: string;
+}
+
+interface Skill extends Base {
+  title: string;
+  icon: string;
+  display: boolean;
+}
+
+interface ProjectType extends Base {
+  title: string;
+}
+
+interface Tool extends Base {
+  title: string;
 }

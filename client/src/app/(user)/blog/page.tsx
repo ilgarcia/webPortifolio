@@ -1,4 +1,3 @@
-
 import { draftMode } from "next/headers";
 
 import { groq } from "next-sanity";
@@ -9,8 +8,6 @@ import PreviewSuspense from "../../../components/PreviewSuspense";
 import PreviewBlogList from "../../../components/PreviewBlogList";
 import { BannerBlog } from "../../../components/BannerBlog";
 import { BlogList } from "../../../components/BlogList";
-
-import styles from "./styles.module.scss";
 
 const query = groq`
   *[_type=='post']{

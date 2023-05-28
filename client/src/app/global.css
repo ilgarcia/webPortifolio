@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply text-white bg-theme-dark;
+    @apply text-white bg-theme-dark font-body;
   }
 
   button {
@@ -58,22 +58,42 @@
   }
 
   .title-h1 {
-    @apply font-semibold text-4xl my-10;
+    @apply font-semibold text-4xl mb-10 lg:my-16;
   }
 
   .title-h2 {
-    @apply font-semibold text-3xl my-10;
+    @apply font-semibold text-3xl mb-10 lg:my-16;
   }
 
   .title-h3 {
-    @apply font-semibold text-2xl my-10;
+    @apply font-semibold text-2xl mb-10 lg:my-16;
   }
 
   .title-h4 {
-    @apply font-semibold text-xl my-10;
+    @apply font-semibold text-xl mb-10 lg:my-16;
+  }
+
+  .title-banner {
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
 
   .title-tab {
     @apply font-semibold text-xl;
+  }
+
+  .title-numbered {
+    @apply flex items-center [counter-increment:section-number] before:relative before:bottom-1 before:[content:'0'counter(section-number)'.'] before:text-theme-orange before:font-display before:mr-2 before:text-right before:text-2xl after:content-[''] after:inline-block after:relative after:w-80 after:h-px after:ml-5 after:bg-slate-300 after:brightness-50;
+  }
+
+  .button-one {
+    @apply border border-solid border-theme-orange text-theme-orange rounded-md py-1.5 mx-8 px-6 ease-in-out duration-500 hover:bg-theme-orange hover:bg-opacity-25;
+  }
+
+  .toggleBlur {
+    @apply overflow-hidden mr-3;
+  }
+
+  .toggleBlur main {
+    @apply blur pointer-events-none select-none z-50;
   }
 }

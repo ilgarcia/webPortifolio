@@ -1,5 +1,3 @@
-import { inter, firaCode } from "./fonts";
-
 import { ToggleProvider } from "../../context/ToggleContext";
 
 import { Footer } from "../../components/Footer";
@@ -11,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <body className={`${inter.className} ${firaCode.variable}`} id="__next">
+      <body id="__next">
         <ToggleProvider>
           <Header />
           {children}
