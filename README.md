@@ -39,4 +39,5 @@ This project uses lot of stuff as:
 
 ## Need to fix 👾
 
-- Preview api route not working with Next 13.4.1
+- Header broken links
+
