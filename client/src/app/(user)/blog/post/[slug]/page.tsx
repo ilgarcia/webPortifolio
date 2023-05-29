@@ -7,7 +7,6 @@ import { client } from "../../../../../../lib/sanity.client";
 import { RichTextComponents } from "../../../../../components/RichTextComponents";
 import urlFor from "../../../../../../lib/urlFor";
 
-import styles from "./styles.module.scss";
 import Link from "next/link";
 
 type Props = {
