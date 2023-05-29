@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-sm md:text-base scroll-smooth;
+  }
+
+  body {
+    @apply text-white bg-theme-dark font-body;
+  }
+
+  button {
+    @apply cursor-pointer outline-none no-underline;
+  }
+
+  a {
+    @apply outline-none text-inherit;
+  }
+
+  ol {
+    @apply list-none;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  ul li {
+    @apply relative mb-1 pl-5 before:content-['▹'] before:absolute before:left-0 before:text-theme-orange;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 border-solid border-theme-dark rounded-full;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-theme-dark;
+  }
+}
+
+@layer components {
+  .markup {
+    @apply block relative after:absolute after:bottom-[13.5%] after:-z-10 after:h-2 after:w-[104%] after:-left-0.5 after:-rotate-1;
+  }
+
+  .mk-purple {
+    @apply after:bg-theme-purple;
+  }
+
+  .mk-orange {
+    @apply after:bg-theme-orange;
+  }
+
+  .title-h1 {
+    @apply font-semibold text-4xl mb-10 lg:my-16;
+  }
+
+  .title-h2 {
+    @apply font-semibold text-3xl mb-10 lg:my-16;
+  }
+
+  .title-h3 {
+    @apply font-semibold text-2xl mb-10 lg:my-16;
+  }
+
+  .title-h4 {
+    @apply font-semibold text-xl mb-10 lg:my-16;
+  }
+
+  .title-banner {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .title-tab {
+    @apply font-semibold text-xl;
+  }
+
+  .title-numbered {
+    @apply flex items-center [counter-increment:section-number] before:relative before:bottom-1 before:[content:'0'counter(section-number)'.'] before:text-theme-orange before:font-display before:mr-2 before:text-right before:text-2xl after:content-[''] after:inline-block after:relative after:w-80 after:h-px after:ml-5 after:bg-slate-300 after:brightness-50;
+  }
+
+  .button-one {
+    @apply border border-solid border-theme-orange text-theme-orange rounded-md py-1.5 mx-8 px-6 ease-in-out duration-500 hover:bg-theme-orange hover:bg-opacity-25;
+  }
+
+  .toggleBlur {
+    @apply overflow-hidden mr-3;
+  }
+
+  .toggleBlur main {
+    @apply blur pointer-events-none select-none z-50;
+  }
+}

@@ -34,3 +34,9 @@ This project uses lot of stuff as:
 - MongoDB
 - Sass
 - Create page with graphics with [gh-polyglot.](https://github.com/IonicaBizau/node-gh-polyglot) 
+
+---
+
+## Need to fix 👾
+
+- Preview api route not working with Next 13.4.1
