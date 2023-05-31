@@ -11,7 +11,7 @@ export function Skills({ skills }: Props) {
   }
 
   return (
-    <section className="max-w-6xl min-h-[90vh] mx-auto pt-24 px-4 lg:px-0">
+    <section id="skills" className="max-w-6xl min-h-[90vh] mx-auto pt-24 px-4 lg:px-0">
       <h2 className="title-h2 title-numbered">My Expertise</h2>
       <div className="flex flex-col items-center gap-6 lg:flex-row">
         <div className="h-fit max-w-xs p-8 border-white border-solid border-2">

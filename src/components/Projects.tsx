@@ -12,7 +12,7 @@ export function Projects({ portfolios }: Props) {
   // }
 
   return (
-    <section className="mx-auto min-h-[80vh] pt-24 px-4 lg:px-0">
+    <section id="projects" className="mx-auto min-h-[80vh] pt-24 px-4 lg:px-0">
       <h2 className="title-h2 title-numbered">Some Things I've Built</h2>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center mx-auto px-8 lg:px-16 gap-8">

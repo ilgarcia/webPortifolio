@@ -4,7 +4,7 @@ import profile from "./img/profile.png";
 
 export function About() {
   return (
-    <section className="max-w-4xl min-h-[80vh] mx-auto pt-24 px-4 lg:px-0">
+    <section id="about" className="max-w-4xl min-h-[80vh] mx-auto pt-24 px-4 lg:px-0">
       <h2 className="title-h2 title-numbered">About Me</h2>
       <div className="block md:grid grid-cols-5 gap-12">
         <div className="col-span-3">

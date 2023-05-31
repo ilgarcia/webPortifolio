@@ -6,7 +6,7 @@ export function Experience() {
   const [openTab, setOpenTab] = useState(1);
 
   return (
-    <section className="max-w-4xl min-h-[80vh] mx-auto pt-24 px-4 lg:px-0">
+    <section id="experience" className="max-w-4xl min-h-[80vh] mx-auto pt-24 px-4 lg:px-0">
       <h2 className="title-h2 title-numbered">
       Where I've Worked
       </h2>

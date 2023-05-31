@@ -105,8 +105,8 @@ export function Header() {
                         key={item}
                         className="duration-300 ease-in-out hover:text-theme-orange hover:scale-110"
                       >
-                        <NavItemMotion className="mt-1.5 lg:mt-0 [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:text-theme-orange before:font-display before:mr-2 before:text-right">
-                          <a href={item}>
+                        <NavItemMotion className="mt-1.5 lg:mt-0 [counter-increment:list-number] before:[content:'0'counter(list-number)'.'] before:text-theme-orange before:font-display before:mr-2 before:text-right ">
+                          <a href={`#${item}`}>
                             {item.charAt(0).toUpperCase() + item.slice(1)}
                           </a>
                         </NavItemMotion>
