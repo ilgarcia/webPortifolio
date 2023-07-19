@@ -1,7 +1,7 @@
 import { ToggleProvider } from "../../context/ToggleContext";
 
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
+import { LoadingScreen } from "../../components/LoadingScreen";
 
 export default function RootLayout({
   children,
@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <body id="__next">
-      <Header />
+      <LoadingScreen />
       <ToggleProvider>{children}</ToggleProvider>
       <Footer />
     </body>
