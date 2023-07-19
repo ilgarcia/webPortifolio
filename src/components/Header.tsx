@@ -46,7 +46,6 @@ export function Header() {
 
   function handleScroll() {
     const currentYOffset = window.scrollY;
-    // const currentYOffset = window.pageYOffset;
     const above = currentYOffset > 0;
 
     setAbove(above);
