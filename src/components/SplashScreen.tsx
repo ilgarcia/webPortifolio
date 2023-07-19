@@ -1,3 +1,5 @@
+"use client"
+
 function SplashScreen() {
   return (
     <section className="absolute h-screen w-full flex justify-center items-center bg-black text-white z-50">

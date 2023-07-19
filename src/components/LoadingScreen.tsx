@@ -16,7 +16,7 @@ export function LoadingScreen() {
 
   useEffect(() => {
     if (isLoading) {
-      setTimeout(() => setIsLoading(false), 10000);
+      setTimeout(() => setIsLoading(false), 5000);
     }
   }, [isLoading]);
 
