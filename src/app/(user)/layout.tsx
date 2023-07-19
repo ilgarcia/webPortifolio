@@ -2,6 +2,7 @@ import { ToggleProvider } from "../../context/ToggleContext";
 
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import SplashScreen from "../../components/SplashScreen";
 
 export default function RootLayout({
   children,
@@ -9,12 +10,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <body id="__next">
-        <ToggleProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ToggleProvider>
-      </body>
+    <body id="__next">
+      {/* <SplashScreen /> */}
+      <Header />
+      <ToggleProvider>{children}</ToggleProvider>
+      <Footer />
+    </body>
   );
 }

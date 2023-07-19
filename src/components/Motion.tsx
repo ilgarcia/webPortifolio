@@ -33,9 +33,9 @@ const navVariants: Variants = {
     transition: {
       type: "spring",
       bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
+      duration: 1.2,
+      delayChildren: 0.4,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -76,3 +76,61 @@ export function NavItemMotion({
   );
 }
 
+const bannerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 2, stiffness: 300, damping: 24 },
+  },
+};
+
+export function BannerMotion({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <m.div
+      initial="hidden"
+      animate="visible"
+      variants={bannerVariants}
+      className={className}
+    >
+      {children}
+    </m.div>
+  );
+}
+
+const testeVariants: Variants = {
+  visible: {
+    transition: {
+      type: "spring",
+      bounce: 0,
+      duration: 1.2,
+      delay: 0.3,
+      delayChildren: 0.4,
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+export function Teste({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <m.div
+      initial="hidden"
+      animate="visible"
+      variants={testeVariants}
+      className={className}
+    >
+      {children}
+    </m.div>
+  );
+}

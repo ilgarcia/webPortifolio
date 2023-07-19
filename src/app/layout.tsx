@@ -1,4 +1,5 @@
-import { Inter, Fira_Code } from "next/font/google";
+import { Inter, Fira_Code, Nunito } from "next/font/google";
+
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -11,6 +12,12 @@ export const firaCode = Fira_Code({
   display: "swap",
   variable: "--fira-font",
 });
+3
+export const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--nunito-font",
+});
 
 import "./global.css";
 
@@ -20,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className} ${firaCode.variable}`}>
+    <html lang="en" className={`${inter.className} ${firaCode.variable} ${nunito.variable}`}>
       {children}
     </html>
   );

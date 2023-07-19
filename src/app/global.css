@@ -96,4 +96,8 @@
   .toggleBlur main {
     @apply blur pointer-events-none select-none z-50;
   }
+
+  .neonWhite {
+    @apply before:content-[''] before:absolute before:bg-white before:top-[150%] before:left-0 before:w-full before:h-full before:[transform:perspective(1em)_rotateX(40deg)] before:blur-2xl before:opacity-50 before:scale-75 before:animate-neonLight;
+  }
 }
