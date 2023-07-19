@@ -58,9 +58,9 @@ module.exports = {
       animation: {
         slideDown: "slideDown 0.5s forwards",
         shine: "shine 2s infinite",
-        animLoader: "animLoader 2s linear infinite",
-        neonLight: "neonLight 5s infinite",
-        brokenLight: "brokenLight 5s infinite",
+        animLoader: "animLoader 150 ease-in-out infinite",
+        neonLight: "neonLight 5s ease-in-out ",
+        brokenLight: "brokenLight 5s ease-in-out infinite",
       },
       keyframes: {
         slideDown: {

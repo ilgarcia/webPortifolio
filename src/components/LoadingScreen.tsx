@@ -1,10 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 import SplashScreen from "./SplashScreen";
-import Spinner from "./Spinner";
 import { Header } from "./Header";
 
 export function LoadingScreen() {
@@ -16,17 +15,15 @@ export function LoadingScreen() {
 
   useEffect(() => {
     if (isLoading) {
-      setTimeout(() => setIsLoading(false), 5000);
+      setTimeout(() => setIsLoading(false), 6000);
     }
   }, [isLoading]);
 
   return (
     <>
       {isLoading && isHome ? (
-        // <Suspense fallback={<Spinner />}>
         <SplashScreen />
       ) : (
-        // </Suspense>
         <Header />
       )}
     </>

@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function Loading() {
   return (
     <section className="absolute h-full w-full flex justify-center items-center bg-black text-white z-50">
