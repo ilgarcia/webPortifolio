@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useContext, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 
 import { ToggleContext } from "../context/ToggleContext";
 
 import { NavItemMotion, NavMotion } from "./Motion";
 import SplashScreen from "./SplashScreen";
+import Spinner from "./Spinner";
 
 export function Header() {
   const { modal } = useContext(ToggleContext);
@@ -71,7 +73,9 @@ export function Header() {
   return (
     <>
       {isLoading && isHome ? (
-        <SplashScreen />
+        <Suspense fallback={<Spinner />}>
+          <SplashScreen />
+        </Suspense>
       ) : (
         <header
           className={`fixed top-0 left-0 w-full h-16 z-40 transition-all duration-700 ease-in-out shadow shadow-black bg-black bg-opacity-30 backdrop-blur-sm ${
