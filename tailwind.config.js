@@ -59,8 +59,8 @@ module.exports = {
         slideDown: "slideDown 0.5s forwards",
         shine: "shine 2s infinite",
         animLoader: "animLoader 150 ease-in-out infinite",
-        neonLight: "neonLight 5s ease-in-out ",
-        brokenLight: "brokenLight 5s ease-in-out infinite",
+        neonLight: "neonLight 4s ease-in-out ",
+        brokenLight: "brokenLight 3s ease-in-out infinite",
       },
       keyframes: {
         slideDown: {
@@ -98,23 +98,30 @@ module.exports = {
           },
         },
         neonLight: {
-          "0%": {opacity: 0},
-          // "40%": {opacity: 1},
-          // "45%": {opacity: 0.8},
-          // "50%": {opacity: 0.9},
-          // "55%": {opacity: 0.8},
-          // "60%": {opacity: 0.9},
-          // "65%": {opacity: 0.8},
-          "70%": {opacity: 1},
-          "100%": {opacity: 1}
+          "0%": {opacity: 0.1},
+          "2%": {opacity: 1},
+          "8%": {opacity: 0.1},
+          "9%": {opacity: 1},
+          "12%": {opacity: 0.5},
+          "20%": {opacity: 1},
+          "25%": {opacity: 0.6},
+          "30%": {opacity: 1},
+          "70%": {opacity: 0.8},
+          "72%": {opacity: 0.7},
+          "77%": {opacity: 0.9},
+          "100%": {opacity: 0.9}
         },
         brokenLight: {
-          "0%": {opacity: 0},
-          "55%": {opacity: 0.4},
-          "60%": {opacity: 0.2},
-          "65%": {opacity: 0.4},
-          "70%": {opacity: 0.2},
-          "100%": {opacity: 0.5}
+          "0%": {opacity: 0.1},
+          "2%": {opacity: 0.1},
+          "4%": {opacity: 0.5},
+          "19%": {opacity: 0.5},
+          "21%": {opacity: 0.1},
+          "23%": {opacity: 0.9},
+          "80%": {opacity: 0.5},
+          "83%": {opacity: 0.4},
+          "87%": {opacity: 0.7},
+          "100%": {opacity: 0.6}
         },
         
       },
