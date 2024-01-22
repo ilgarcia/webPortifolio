@@ -17,27 +17,27 @@ export default {
       },
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text'
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'skill',
-      title: 'Skill',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'skill'}}]
+      name: "skill",
+      title: "Skill",
+      type: "array",
+      of: [{ type: "reference", to: { type: "skill" } }],
     },
     {
-      name: 'tools',
-      title: 'Tools',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'tools'}}]
+      name: "tools",
+      title: "Tools",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tools" } }],
     },
     {
-      name: 'projectType',
-      title: 'Project Type',
-      type: 'reference',
-      to: {type: 'projectType'}
+      name: "projectType",
+      title: "Project Type",
+      type: "reference",
+      to: { type: "projectType" },
     },
     {
       name: "github",

@@ -59,24 +59,4 @@ export function Socials() {
   );
 }
 
-//     li {
-//       margin: 10px auto;
-//       a {
-//         padding: 10px;
-//       }
 
-//       transition: all 0.6s;
-
-//       &:hover {
-//         transform: translateY(-3px);
-//       }
-
-//       &:hover,
-//       &:focus {
-//         color: var(--slate-100);
-//       }
-//     }
-//   }
-// }
-
-//  ----------------

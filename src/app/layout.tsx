@@ -12,7 +12,7 @@ export const firaCode = Fira_Code({
   display: "swap",
   variable: "--fira-font",
 });
-3
+
 export const nunito = Nunito({
   subsets: ["latin"],
   display: "swap",

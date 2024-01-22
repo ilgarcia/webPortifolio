@@ -53,7 +53,7 @@ export default async function Page({ params: { slug } }: Props) {
     <article className="max-w-6xl my-20 mx-auto">
       <section>
         <div className="relative flex flex-col justify-between ">
-          <div className="absolute top-0 w-full h-full opacity-10">
+          <div className="absolute top-0 left w-full h-full opacity-10">
             <Image
               className="object-cover object-center mx-auto"
               src={urlFor(post.mainImage).url()}

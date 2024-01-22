@@ -32,6 +32,7 @@ const querySkills = groq`
 export default async function Page() {
   const portfolios = await client.fetch(queryPortfolios);
   const skills = await client.fetch(querySkills);
+  
   return (
     <main>
       <BannerPortfolio />
