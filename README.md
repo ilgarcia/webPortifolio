@@ -1,4 +1,4 @@
-# Portfolio
+# Personal Portfolio Project - Version 1
 
 ![Portfolio](https://user-images.githubusercontent.com/60369262/218871426-2d913db5-0c9d-4c22-8a38-d90ab25c13c5.png)
 
